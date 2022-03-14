@@ -1,8 +1,8 @@
 import { Button, TextField } from "@mui/material";
 import React from "react";
 import UseForm from "../../hooks/useForm";
-import { ContainerInput } from "./styled";
-
+import { ContainerInput, ContairnerImg} from "./styled";
+import logo from "../../assets/logo-future-eats-invert@2x.png"
 
 const SignUpPage = () => {
   const {form, onChange, clearFields} = UseForm({
@@ -19,8 +19,9 @@ const SignUpPage = () => {
   }
   return (
     <ContainerInput>
-      <h1>SignUpPage</h1>
-      {/* <img src="" alt={"Logo"}/> */}
+      <ContairnerImg>
+      <img src={logo} alt={"Logo"}/>
+      </ContairnerImg>
       <form onSubmit={submit}>
       <TextField
       name={"name"}
@@ -63,7 +64,7 @@ const SignUpPage = () => {
       onChange={onChange}
       />
      
-      <Button variant="outlined" color={"primary"} type="submit">Cadastrar</Button>
+      <Button variant="contained" color={"primary"} type="submit">Cadastrar</Button>
       </form>
     </ContainerInput>
   )
