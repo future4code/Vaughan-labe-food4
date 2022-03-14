@@ -1,8 +1,8 @@
 import { ThemeProvider } from '@mui/material';
 import React from 'react';
 import theme from './constants/theme';
-import GlobalState from './global/GlobalState';
 import { Router } from "./routes/Router";
+import GlobalState from "./global/GlobalState"
 
 const App = () => {
   return (
@@ -10,7 +10,9 @@ const App = () => {
     <ThemeProvider theme={theme}>
     <Router/>
     </ThemeProvider>
-     </GlobalState>
+    </GlobalState>
+
+  
   );
 }
 

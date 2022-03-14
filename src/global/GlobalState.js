@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import GlobalStateContext from "./GlobalStateContext";
 
-const GlobalState = () => {
+const GlobalState = (props) => {
     const [cart, setCart] = useState([])
 
     const data = {
@@ -11,7 +11,7 @@ const GlobalState = () => {
     
     return(
         <GlobalStateContext.Provider value={ data }>
-
+        {props.children}
         </GlobalStateContext.Provider>
     )
 }
