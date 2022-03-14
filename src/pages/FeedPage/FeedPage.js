@@ -1,6 +1,6 @@
 import React from "react";
 
-export const FeedPage = () => {
+const FeedPage = () => {
 
   return (
     <div>
