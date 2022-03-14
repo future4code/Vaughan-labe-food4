@@ -2,8 +2,9 @@ import styled from "styled-components";
 export const ContainerInput = styled.div`
     display: grid;
     justify-content: center;
+    align-items: center;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     form{
         display: grid;
         gap: 1rem;
@@ -11,5 +12,25 @@ export const ContainerInput = styled.div`
         height: 60vh;
         
     }
+`
+
+export const ContairnerImg = styled.div`
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    img{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+    }
 
 `
+
+// export const Img = styled.img`
+//     display: grid;
+//     justify-content: center;
+//     align-items: center;
+//     margin-left: 4rem;
+
+// `
