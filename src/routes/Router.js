@@ -13,7 +13,9 @@ import SignUpPage from "../pages/SignUpPage/SignUpPage";
 export const Router = () => {
 
   return(
+   
     <BrowserRouter>
+    
       <Routes>
 
         <Route path="/" element={<LoginPage/>} />
@@ -26,6 +28,8 @@ export const Router = () => {
         <Route path="/*" element={<ErrorPage/>}/>
         
       </Routes>
+      
     </BrowserRouter>
+  
   )
 }
