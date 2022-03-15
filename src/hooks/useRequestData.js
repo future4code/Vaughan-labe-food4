@@ -15,6 +15,7 @@ const useRequestData = (initialState, url) => {
             .then((response) => {
                 setCarregando(false)
                 setData(response.data)
+                console.log(response.data)
             })
             .catch((error) => {
             })
