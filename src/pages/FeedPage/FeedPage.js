@@ -7,6 +7,7 @@ import InputAdornment from '@mui/material/InputAdornment'
 import FormControl from '@mui/material/FormControl'
 import SearchIcon from '@mui/icons-material/Search'
 import Divider from '@mui/material/Divider';
+import NavBarHome from "../../components/NavBar/NarBarHome";
 
 const FeedPage = () => {
 
@@ -34,6 +35,7 @@ const FeedPage = () => {
         </div>
       </Box>
       <CardFeed/>
+      <NavBarHome/>
     </div>
   )
 }
