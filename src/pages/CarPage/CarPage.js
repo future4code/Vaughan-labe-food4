@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import Payments from "./Payments/Payments";
 import GlobalStateContext from "../../global/GlobalStateContext";
 import { ContainerCart } from "./styled";
+import NavBarCart from "../../components/NavBar/NavBarCart";
 
 const CarPage = () => {
   const {cart, setCart} = useContext(GlobalStateContext)
@@ -42,7 +43,8 @@ const CarPage = () => {
       
       </div>
 
-      <div>nav bar</div>
+      <NavBarCart/>
+
       </ContainerCart>
     </>
   )
