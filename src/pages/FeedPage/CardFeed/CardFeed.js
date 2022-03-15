@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react'
 import {Card, CardContent, CardMedia, Typography} from '@mui/material'
 import { CardActionArea, Box } from '@mui/material'
 import styled from 'styled-components'
+import { LoadingStyle } from '../styled'
 import { useNavigate } from 'react-router-dom'
 import { goToRestaurant } from '../../../routes/coordinator'
 import GlobalStateContext from '../../../global/GlobalStateContext'
@@ -23,9 +24,7 @@ const ContainerCard = styled.div`
 const CardFeed = () => {
     const{restaurants}=useContext (GlobalStateContext)
 
-    useEffect(()=>{
-        
-    },[restaurants])
+  
     const Navigate= useNavigate()
 
     const onClickInfoRestaurant = (id) => {
@@ -65,7 +64,7 @@ const CardFeed = () => {
     })
     return (
        <div>
-        {restaurantList}
+       {restaurantList && restaurantList.length > 0 ? restaurantList : <LoadingStyle></LoadingStyle>}
        </div>
     );
 }
