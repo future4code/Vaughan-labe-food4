@@ -21,11 +21,10 @@ const ContainerCard = styled.div`
 `
 
 const CardFeed = () => {
-    const {restaurants} = useContext (GlobalStateContext)
-   
+    const {restaurants, loading} = useContext (GlobalStateContext)
     const Navigate = useNavigate()
-   useEffect(()=>{
 
+   useEffect(()=>{
    },[restaurants])
    
     const onClickInfoRestaurant = (id) => {
@@ -65,8 +64,8 @@ const CardFeed = () => {
     })
     return (
        <div>
-       {restaurantList && restaurantList.length > 0 ? restaurantList : <LoadingStyle></LoadingStyle>}
-       </div>
-    );
+       {loading ? <LoadingStyle></LoadingStyle> : restaurantList}
+      </div> 
+    )
 }
 export default CardFeed;

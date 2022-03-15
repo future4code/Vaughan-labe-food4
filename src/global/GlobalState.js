@@ -5,14 +5,15 @@ import GlobalStateContext from "./GlobalStateContext";
 
 
 const GlobalState = (props) => {
-    const [restaurants] = useRequestData([], `${BASE_URL}/restaurants`)
+    const [restaurants, setRestaurants, loading] = useRequestData([], `${BASE_URL}/restaurants`)
 
     const [cart, setCart] = useState([])
 
     const data = {
         cart,
         setCart,
-        restaurants
+        restaurants,
+        loading
     }
     
     return(
