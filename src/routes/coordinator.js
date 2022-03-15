@@ -11,15 +11,15 @@ export const goToCar = (Navigate) => {
 }
 
 export const goToFeed = (Navigate) => {
-  Navigate("/");
+  Navigate("/feed");
 }
 
 export const goToProfile = (Navigate) => {
   Navigate("/");
 }
 
-export const goToRestaurant = (Navigate) => {
-  Navigate("/");
+export const goToRestaurant = (Navigate, id) => {
+  Navigate(`/restaurant/${id}`);
 }
 
 export const goToSearch = (Navigate) => {
