@@ -5,6 +5,7 @@ import UseForm from "../../hooks/useForm";
 import { ContainerInput, ContairnerImg} from "./styled";
 import { login } from "../../services/Requests";
 import { useNavigate } from "react-router-dom";
+import { goToSingUp } from "../../routes/coordinator";
 const LoginPage = () => {
   const navigate = useNavigate()
   const {form, onChange, clearFields} = UseForm({
@@ -13,8 +14,8 @@ const LoginPage = () => {
   })
   const submit = (event) =>{
     event.preventDefault()
-    clearFields()
-    login(form, clearFields, navigate)
+    login(form, clearFields ,navigate)
+    
   }
   return (
     <ContainerInput>
@@ -43,8 +44,12 @@ const LoginPage = () => {
       required
       onChange={onChange}
       />
-      <Button variant="contained" color={"primary"} type="submit">Cadastrar</Button>
+      <Button variant="contained" color={"primary"} type="submit">Entrar</Button>
       </form>
+      <Button 
+      onClick={() => goToSingUp(navigate)}
+      variant="text" margin={"normal"} color={"inherit"}>Não possui cadastro? Clique aqui.
+      </Button>
     </ContainerInput>
   )
 }
