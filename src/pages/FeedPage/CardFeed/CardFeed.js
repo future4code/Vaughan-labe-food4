@@ -18,12 +18,12 @@ const ContainerCard = styled.div`
     display: flex;
     justify-content: center;
     margin-top: 15px;
-
 `
 
 const CardFeed = () => {
-    const {restaurants}=useContext (GlobalStateContext)
-    const Navigate= useNavigate()
+    const {restaurants} = useContext (GlobalStateContext)
+   
+    const Navigate = useNavigate()
 
     const onClickInfoRestaurant = (id) => {
         goToRestaurant (Navigate, id)
