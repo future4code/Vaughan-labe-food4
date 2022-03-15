@@ -43,7 +43,7 @@ const CarPage = () => {
       
       </div>
 
-      <NavBarCart/>
+      <NavBarCart className="navbar"/>
 
       </ContainerCart>
     </>
