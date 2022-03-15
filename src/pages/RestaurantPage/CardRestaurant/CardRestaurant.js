@@ -1,9 +1,8 @@
-import React from "react";
-import { useParams } from "react-router-dom";
-import useRequestData from "../../../hooks/useRequestData";
-import { BASE_URL } from "../../../constants/url";
-import { Card, CardContent, CardMedia, Typography, Box } from "@mui/material";
-import styled from "styled-components";
+import React from "react"
+import { useParams } from "react-router-dom"
+import useRequestData from "../../../hooks/useRequestData"
+import { BASE_URL } from "../../../constants/url"
+import { Card, CardContent, CardMedia, Typography, Box } from "@mui/material"
 import { InfoRestaurant, BoxBotton, StyleButton } from './styled'
 
 const CardRestaurant = () => {

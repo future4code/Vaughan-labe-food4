@@ -1,14 +1,15 @@
 import styled from 'styled-components'
+import { Box } from '@mui/material'
 
-const InfoRestaurant = styled(Box)`
+export const InfoRestaurant = styled(Box)`
   display: flex;
   justify-content: space-between;
 `
-const BoxBotton = styled(Box)`
+export const BoxBotton = styled(Box)`
 display: flex;
 justify-content: space-between;
 `
-const StyleButton = styled.button`
+export const StyleButton = styled.button`
 font-size: 16px;
 padding-top: 8px;
 padding-left: 15px;
