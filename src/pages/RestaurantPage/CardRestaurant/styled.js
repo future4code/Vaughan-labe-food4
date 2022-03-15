@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Box } from '@mui/material'
+import { Box, CardMedia } from '@mui/material'
 
 export const InfoRestaurant = styled(Box)`
   display: flex;
@@ -20,4 +20,9 @@ border-radius: 8px 0px 0px 0px;
 :hover{
   background-color: #E2FFD5;
 }
+`
+export const CardMediaStyle = styled(CardMedia)`
+    display: flex;
+    justify-content: flex-start;
+    width: 150px;
 `
