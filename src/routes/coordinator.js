@@ -6,6 +6,10 @@ export const goToSingUp = (Navigate) => {
   Navigate("/signUp");
 }
 
+export const goToAdress = (Navigate) => {
+  Navigate("/adress");
+}
+
 export const goToCar = (Navigate) => {
   Navigate("/");
 }

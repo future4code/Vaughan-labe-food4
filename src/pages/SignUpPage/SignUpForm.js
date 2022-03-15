@@ -8,11 +8,11 @@ import { useNavigate } from "react-router-dom";
 const SignUpForm = () => {
   const navigate = useNavigate()
   const {form, onChange, clearFields} = UseForm({
-    name: "",
-    email: "",
-    cpf: "",
-    password: "",
-    confirmation: ""
+      name: "",
+      email: "",
+      cpf: "",
+      password: "",
+      confirmation: ""
   })
   const submit = (event) =>{
     event.preventDefault()

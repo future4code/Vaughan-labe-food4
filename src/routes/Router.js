@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Adress from "../pages/Adress/Adress";
 import CarPage from "../pages/CarPage/CarPage";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import FeedPage from "../pages/FeedPage/FeedPage";
@@ -20,6 +21,7 @@ export const Router = () => {
 
         <Route path="/" element={<LoginPage/>} />
         <Route path="/signUp" element={<SignUpPage/>}/>
+        <Route path="/adress" element={<Adress/>}/>
         <Route path="/feed" element={<FeedPage/>}/>
         <Route path="/restaurant/:id" element={<RestaurantPage/>}/>
         <Route path="/search" element={<SearchPage/>}/>
