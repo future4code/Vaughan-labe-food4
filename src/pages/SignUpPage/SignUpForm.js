@@ -16,14 +16,14 @@ const SignUpForm = () => {
   })
   const submit = (event) =>{
     event.preventDefault()
-    signUp(body, clearFields, navigate)
+    signUp(form, clearFields, navigate)
   }
-  const body = {
-    name: form.name,
-    email: form.email,
-    cpf: form.cpf,
-    password: form.password
-  }
+  // const body = {
+  //   name: form.name,
+  //   email: form.email,
+  //   cpf: form.cpf,
+  //   password: form.password
+  // }
   
   return (
     <ContainerInput>

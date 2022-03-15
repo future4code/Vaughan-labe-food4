@@ -3,6 +3,7 @@ import { BASE_URL } from "../constants/url";
 import { goToAdress, goToFeed } from "../routes/coordinator";
 
 export const login = (body, clear, navigate) => {
+  
   axios.post(`${BASE_URL}/login`, body)
   .then((response)=>{
     localStorage.setItem("token", response.data.token)
