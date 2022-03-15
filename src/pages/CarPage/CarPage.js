@@ -11,7 +11,7 @@ const CarPage = () => {
   return (
     <>
     <ContainerCart>
-      <h3>Meu carrinho</h3>
+      <h3 className="myCart">Meu carrinho</h3>
 
       <div>
         endereço
@@ -28,7 +28,7 @@ const CarPage = () => {
       <div className="payments">
 
         <div className="frete">
-        <h4>frete R$0,00</h4>
+        <h4>Frete R$0,00</h4>
         </div>
    
         <div className="priceAll">

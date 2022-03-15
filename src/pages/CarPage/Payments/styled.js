@@ -12,4 +12,5 @@ export const ContainerForm = styled.div`
 
 export const ButtonStyle = styled(Button)`
 width: 100%;
+border-radius: 1px;
 `

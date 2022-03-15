@@ -8,6 +8,13 @@ align-items: center;
 width: 100%;
 height: 100%;
 
+.myCart{
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #dfdfdf;
+    width: 100%;
+    height: 40px;
+}
 
 .payments{
     display: flex;
