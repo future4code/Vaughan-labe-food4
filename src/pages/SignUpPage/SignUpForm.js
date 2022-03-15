@@ -19,12 +19,6 @@ const SignUpForm = () => {
     event.preventDefault()
     signUp(form, clearFields, navigate)
   }
-  // const body = {
-  //   name: form.name,
-  //   email: form.email,
-  //   cpf: form.cpf,
-  //   password: form.password
-  // }
   
   return (
     <ContainerInput>
