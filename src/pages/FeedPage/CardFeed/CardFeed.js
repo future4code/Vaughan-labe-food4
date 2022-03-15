@@ -41,7 +41,6 @@ const CardFeed = () => {
                                 </Typography>
                             </InfoRestaurant>
                         </CardContent>
-
                     </CardActionArea>
                 </Card>
             </div>
