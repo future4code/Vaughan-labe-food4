@@ -14,8 +14,8 @@ const InfoRestaurant = styled(Box)`
     justify-content: space-between
 `
 const CardFeed = () => {
+    const [restaurants] = useRequestData([], `${BASE_URL}/restaurants/`)
 
-    const [restaurants] = useRequestData([], `${BASE_URL}/restaurants`)
     const restaurantList = restaurants && restaurants.map((rest) => {
         return (
             <div key={rest.id}>

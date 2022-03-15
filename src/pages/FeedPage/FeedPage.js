@@ -33,6 +33,7 @@ const FeedPage = () => {
           </FormControl>
         </div>
       </Box>
+      <CardFeed/>
     </div>
   )
 }
