@@ -24,7 +24,10 @@ const CardFeed = () => {
     const {restaurants} = useContext (GlobalStateContext)
    
     const Navigate = useNavigate()
+   useEffect(()=>{
 
+   },[restaurants])
+   
     const onClickInfoRestaurant = (id) => {
         goToRestaurant (Navigate, id)
     }
