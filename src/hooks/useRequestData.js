@@ -4,13 +4,12 @@ import axios from 'axios'
 const useRequestData = (initialState, url) => {
     const [data, setData] = useState(initialState)
     const [loading, setLoading] = useState(false)
-    const token = window.localStorage.getItem('token')
     
     useEffect(() => {
         setLoading(true)
         axios.get(url, {
             headers: {
-                auth: token
+                auth: window.localStorage.getItem('token')
             }
         })
             .then((response) => {

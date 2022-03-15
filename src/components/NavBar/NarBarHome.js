@@ -24,9 +24,9 @@ import { useNavigate } from 'react-router-dom';
           setValue(newValue);
         }}
       >
-        <BottomNavigationAction  icon={<img src={homepage} className="avatar"/>} />
-        <BottomNavigationAction  icon={<img src={Cart} className="avatar"/>}  onClick={()=> goToCar(navigate)}/>
-        <BottomNavigationAction  icon={<img src={avatar} className="avatar"/>}  onClick={()=> goToProfile(navigate)}/>
+        <BottomNavigationAction  icon={<img src={homepage} alt="Ícone Home" className="avatar"/>} />
+        <BottomNavigationAction  icon={<img src={Cart} alt="Ícone Carrinho de Compras" className="avatar"/>}  onClick={()=> goToCar(navigate)}/>
+        <BottomNavigationAction  icon={<img src={avatar} alt="Ícone Perfil" className="avatar"/>}  onClick={()=> goToProfile(navigate)}/>
       </BottomNavigation>
     </Box>
     </ContainerNavBar>
