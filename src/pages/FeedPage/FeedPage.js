@@ -14,7 +14,7 @@ const FeedPage = () => {
   return (
     <div>
       <Title>
-      <h2>FutureEatss</h2>
+      <h2>FutureEats</h2>
       </Title>
 
       <Box sx={{ display: 'flex', justifyContent: 'center' }}>
