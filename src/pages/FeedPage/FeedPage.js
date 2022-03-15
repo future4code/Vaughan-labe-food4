@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import CardFeed from "./CardFeed/CardFeed";
 import {Title} from "./styled"
 import Box from '@mui/material/Box'
