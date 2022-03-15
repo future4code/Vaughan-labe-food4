@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -18,6 +18,10 @@ const InfoRestaurant = styled(Box)`
 `
 const CardFeed = () => {
     const{restaurants}=useContext (GlobalStateContext)
+
+    useEffect(()=>{
+        
+    },[restaurants])
     const Navigate= useNavigate()
 
     const onClickInfoRestaurant = (id) => {
