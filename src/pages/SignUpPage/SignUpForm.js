@@ -14,6 +14,7 @@ const SignUpForm = () => {
       password: "",
       confirmation: ""
   })
+  
   const submit = (event) =>{
     event.preventDefault()
     signUp(body, clearFields, navigate)

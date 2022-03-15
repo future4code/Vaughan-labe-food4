@@ -1,26 +1,34 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea, Box } from '@mui/material';
 import styled from 'styled-components'
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { BASE_URL } from '../../../constants/url';
 import useRequestData from '../../../hooks/useRequestData';
+import { goToRestaurant } from '../../../routes/coordinator';
+import GlobalStateContext from '../../../global/GlobalStateContext';
 
 const InfoRestaurant = styled(Box)`
     display: flex;
     justify-content: space-between
 `
 const CardFeed = () => {
-    const [restaurants] = useRequestData([], `${BASE_URL}/restaurants/`)
+    const{restaurants}=useContext (GlobalStateContext)
+    const Navigate= useNavigate()
 
-    const restaurantList = restaurants && restaurants.map((rest) => {
+    const onClickInfoRestaurant = (id) => {
+        goToRestaurant (Navigate, id)
+    }
+
+    const restaurantList = restaurants?.restaurants && restaurants?.restaurants.map((rest) => {
         return (
             <div key={rest.id}>
                 <Card sx={{ maxWidth: 345 }}>
-                    <CardActionArea>
+                    <CardActionArea onClick={() => onClickInfoRestaurant(rest.id)}>
                         <CardMedia
                             component="img"
                             height="140"
