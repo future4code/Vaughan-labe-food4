@@ -3,15 +3,15 @@ import { BASE_URL } from "../constants/url";
 import { goToFeed } from "../routes/coordinator";
 
 export const login = (body, clear, navigate) => {
-  axios.post(`${BASE_URL}/login`, body, clear, navigate)
-  .then((responde)=>{
-    localStorage.setItem("token", responde.data.token)
-    clear()
+  axios.post(`${BASE_URL}/login`, body)
+  .then((response)=>{
+    localStorage.setItem("token", response.data.token)
+     clear()
      goToFeed(navigate)
     })
     .catch((error)=>{
-      console.log(error.responde)
-      alert("Usuário não encontrado")
+      
+      alert(error.response.data.message)
     })
 }
 

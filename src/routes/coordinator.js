@@ -3,7 +3,7 @@ export const goToLogin = (Navigate) => {
 }
 
 export const goToSingUp = (Navigate) => {
-  Navigate("/");
+  Navigate("/signUp");
 }
 
 export const goToCar = (Navigate) => {

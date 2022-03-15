@@ -22,7 +22,7 @@ const SignUpForm = () => {
     name: form.name,
     email: form.email,
     cpf: form.cpf,
-    password: form.cpf
+    password: form.password
   }
   
   return (
