@@ -1,10 +1,12 @@
-import React from "react";
+import React from "react"
+import CardRestaurant from "./CardRestaurant/CardRestaurant"
+
 
 const RestaurantePage = () => {
 
   return (
     <div>
-      <h1>RestaurantPage</h1>
+      <CardRestaurant />
     </div>
   )
 }
