@@ -28,7 +28,7 @@ const LoginPage = () => {
       <TextField
        name={"email"}
        placeholder="email"
-       value={form.name}
+       value={form.email}
        label={"email"}
        type={"text"}
        required
