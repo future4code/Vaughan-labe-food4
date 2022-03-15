@@ -8,9 +8,11 @@ import FormControl from '@mui/material/FormControl'
 import SearchIcon from '@mui/icons-material/Search'
 import Divider from '@mui/material/Divider';
 import NavBarHome from "../../components/NavBar/NarBarHome";
+import { goToSearch } from "../../routes/coordinator";
+import  {useNavigate} from "react-router-dom";
 
 const FeedPage = () => {
-
+   const navigate = useNavigate()
 
   return (
     <div>
@@ -23,7 +25,7 @@ const FeedPage = () => {
         <div>
           <FormControl sx={{ m: 1, width: '40ch' }} variant="outlined" >
             <OutlinedInput
-
+               onClick={()=> goToSearch(navigate)}
               type={'text'}
               startAdornment={
                 <InputAdornment position="start">
