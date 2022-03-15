@@ -16,7 +16,7 @@ import { useNavigate } from 'react-router-dom';
 
   return (
     <ContainerNavBar>
-    <Box sx={{ width: 400 }}>
+    <Box sx={{ width: 400}}>
       <BottomNavigation
         showLabels
         value={value}
