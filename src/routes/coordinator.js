@@ -11,7 +11,7 @@ export const goToAdress = (Navigate) => {
 }
 
 export const goToCar = (Navigate) => {
-  Navigate("/");
+  Navigate("/car");
 }
 
 export const goToFeed = (Navigate) => {
@@ -19,7 +19,7 @@ export const goToFeed = (Navigate) => {
 }
 
 export const goToProfile = (Navigate) => {
-  Navigate("/");
+  Navigate("/profile");
 }
 
 export const goToRestaurant = (Navigate, id) => {
@@ -27,5 +27,5 @@ export const goToRestaurant = (Navigate, id) => {
 }
 
 export const goToSearch = (Navigate) => {
-  Navigate("/");
+  Navigate("/search");
 }

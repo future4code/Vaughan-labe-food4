@@ -15,9 +15,22 @@ const SignUpForm = () => {
       confirmation: ""
   })
   
+  const body = {
+    name: form.name,
+    email: form.email,
+    cpf: form.cpf,
+    password: form.password,
+    confirmation: form.confirmation
+
+  }
   const submit = (event) =>{
     event.preventDefault()
-    signUp(form, clearFields, navigate)
+    if(form.password === form.confirmation){
+      signUp(body, clearFields, navigate)
+    }
+    else{
+      alert("Senhas Diferentes")
+    }
   }
   
   return (
@@ -73,7 +86,6 @@ const SignUpForm = () => {
       required
       onChange={onChange}
       />
-     
       <Button variant="contained" color={"primary"} type="submit">Cadastrar</Button>
       </form>
     </ContainerInput>
