@@ -11,7 +11,7 @@ export const goToCar = (Navigate) => {
 }
 
 export const goToFeed = (Navigate) => {
-  Navigate("/");
+  Navigate("/feed");
 }
 
 export const goToProfile = (Navigate) => {
