@@ -24,9 +24,9 @@ import { goToFeed, goToProfile } from '../../routes/coordinator';
           setValue(newValue);
         }}
       >
-        <BottomNavigationAction  icon={<img src={homepage} className="avatar"/>} onClick={()=> goToFeed(navigate)}/>
-        <BottomNavigationAction  icon={<img src={Cart} className="avatar"/>} />
-        <BottomNavigationAction  icon={<img src={avatar} className="avatar"/>} onClick={()=> goToProfile(navigate)}/>
+        <BottomNavigationAction  icon={<img src={homepage} alt="Ícone Home" className="avatar"/>} onClick={()=> goToFeed(navigate)}/>
+        <BottomNavigationAction  icon={<img src={Cart} alt="Ícone Carrinho de Compras" className="avatar"/>} />
+        <BottomNavigationAction  icon={<img src={avatar} alt="Ícone Perfil" className="avatar"/>} onClick={()=> goToProfile(navigate)}/>
       </BottomNavigation>
     </Box>
     </ContainerNavBar>

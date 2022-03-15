@@ -65,7 +65,7 @@ const CardRestaurant = () => {
     const foodsRestaurant = foods.restaurant?.products && foods?.restaurant?.products
         .map((food) => {
             return (
-                <div>
+                <div key={food.id}>
                     <Card sx={{ display: "flex", flexDirection: "row-reverse", border: 1, borderColor: "#c4c4c4", maxWidth: 400, borderRadius: 3 }}>
 
                         <Box sx={{ display: "flex", flexDirection: "column" }}>
