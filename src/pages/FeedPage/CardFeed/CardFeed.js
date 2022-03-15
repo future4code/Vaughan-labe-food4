@@ -9,7 +9,7 @@ import GlobalStateContext from '../../../global/GlobalStateContext'
 
 const InfoRestaurant = styled(Box)`
     display: flex;
-    justify-content: space-between
+    justify-content: space-between;
 `
 const CardStyle = styled(Card)`
     width: 345px;
@@ -21,9 +21,9 @@ const ContainerCard = styled.div`
 `
 
 const CardFeed = () => {
-    const{restaurants}=useContext (GlobalStateContext)
-  
-    const Navigate= useNavigate()
+    const {restaurants} = useContext (GlobalStateContext)
+   
+    const Navigate = useNavigate()
 
     const onClickInfoRestaurant = (id) => {
         goToRestaurant (Navigate, id)
