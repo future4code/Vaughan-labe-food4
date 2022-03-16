@@ -6,14 +6,18 @@ import GlobalStateContext from "./GlobalStateContext";
 
 const GlobalState = (props) => {
     const [restaurants, setRestaurants, loading] = useRequestData([], `${BASE_URL}/restaurants`)
-
     const [cart, setCart] = useState([])
 
+    const removeTheFood = (food) => {
+        const filterFood = cart.filter((f)=> f.id !== food.id)
+        setCart(filterFood)
+    }
     const data = {
         cart,
         setCart,
         restaurants,
-        loading
+        loading,
+        removeTheFood
     }
     
     return(
