@@ -61,7 +61,6 @@ const CardRestaurant = () => {
             )
         })
 
-
     return (
         <div>
             {loading ? <LoadingStyle></LoadingStyle> : infoRestaurant}
