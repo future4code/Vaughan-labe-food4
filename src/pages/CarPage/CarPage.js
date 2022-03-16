@@ -5,7 +5,7 @@ import { ContainerCart } from "./styled";
 import NavBarCart from "../../components/NavBar/NavBarCart";
 
 const CarPage = () => {
-  const {cart, setCart} = useContext(GlobalStateContext)
+  const {cart, setCart, removeTheFood } = useContext(GlobalStateContext)
 
   
 
@@ -19,8 +19,13 @@ const CarPage = () => {
       </div>
 
       <div>
-        {cart.length === 0? <p>carrinho vazio</p>: cart.map((i)=>{
-          return<div>{i}</div>
+        {cart.length === 0? <p>carrinho vazio</p>: cart.map((food)=>{
+          return(
+            <div key={food.id}>
+                {food.name}
+                <button onClick={()=>removeTheFood(food)}>remover</button>
+              </div>
+          )
         })}
       </div>
 

@@ -18,6 +18,7 @@ const CardFood = () => {
         document.getElementById(`popup`).style.display = `block`
         setFood(food)
     }
+    
     const exitQuantify = () => {
         document.getElementById(`popup`).style.display = `none`
     }
@@ -35,6 +36,8 @@ const CardFood = () => {
         setCart(newCart)
         exitQuantify()
     }
+    console.log(cart)
+
     const onChange = (e) => {
         setAmount(e.target.value)
     }
