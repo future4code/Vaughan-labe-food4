@@ -7,7 +7,7 @@ import { Card, CardContent, Typography, Box } from "@mui/material"
 import { BoxBotton, StyleButton, CardMediaStyle, LoadingStyle } from './styled'
 
 const CardFood = () => {
-    
+
     const params = useParams()
     const { loading } = useContext(GlobalStateContext)
     const [foods] = useRequestData([], `${BASE_URL}/restaurants/${params.id}`)
