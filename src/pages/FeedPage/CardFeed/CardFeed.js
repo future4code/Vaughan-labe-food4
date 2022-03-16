@@ -1,24 +1,9 @@
 import React, { useContext, useEffect } from 'react'
-import {Card, CardContent, CardMedia, Typography} from '@mui/material'
-import { CardActionArea, Box } from '@mui/material'
-import styled from 'styled-components'
-import { LoadingStyle } from '../styled'
+import {CardActionArea, CardContent, CardMedia, Typography, Card} from '@mui/material'
+import { LoadingStyle, InfoRestaurant, ContainerCard } from '../styled'
 import { useNavigate } from 'react-router-dom'
 import { goToRestaurant } from '../../../routes/coordinator'
 import GlobalStateContext from '../../../global/GlobalStateContext'
-
-const InfoRestaurant = styled(Box)`
-    display: flex;
-    justify-content: space-between;
-`
-const CardStyle = styled(Card)`
-    width: 345px;
-`
-const ContainerCard = styled.div`
-    display: flex;
-    justify-content: center;
-    margin-top: 15px;
-`
 
 const CardFeed = () => {
     const {restaurants, loading} = useContext (GlobalStateContext)
@@ -32,14 +17,16 @@ const CardFeed = () => {
     }
 
     const restaurantList = restaurants?.restaurants && restaurants?.restaurants.map((rest) => {
+
         return (
             <ContainerCard key={rest.id}>
-                <CardStyle sx={{borderRadius: 3, border: 1, borderColor: '#c4c4c4'}}>
+
+                <Card sx={{display: "flex", justifyContent: "center", borderRadius: 3, border: 1, borderColor: '#c4c4c4', width: 378}}>
 
                     <CardActionArea onClick={() => onClickInfoRestaurant(rest.id)}>
                         <CardMedia
                             component="img"
-                            height="140"
+                            height="100"
                             image={rest.logoUrl}
                             alt= {rest.name}
                         />
@@ -58,14 +45,16 @@ const CardFeed = () => {
                         </CardContent>
                     </CardActionArea>
 
-                </CardStyle>
+                </Card>
+                
             </ContainerCard>
         )
     })
+
     return (
        <div>
        {loading ? <LoadingStyle></LoadingStyle> : restaurantList}
       </div> 
     )
 }
-export default CardFeed;
+export default CardFeed
