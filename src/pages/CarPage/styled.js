@@ -33,4 +33,7 @@ height: 100%;
         justify-content: space-between;
     }
 }
+.navbar{
+    width: 100%;
+}
 `
