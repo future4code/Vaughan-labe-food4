@@ -3,21 +3,33 @@ import Payments from "./Payments/Payments";
 import GlobalStateContext from "../../global/GlobalStateContext";
 import { ContainerCart } from "./styled";
 import NavBarCart from "../../components/NavBar/NavBarCart";
+import useRequestData from "../../hooks/useRequestData";
+import { BASE_URL } from "../../constants/url";
 
 const CarPage = () => {
-  const {cart, setCart, removeTheFood } = useContext(GlobalStateContext)
+  const {cart, setCart, removeTheFood, cartRest} = useContext(GlobalStateContext)  
+  const profile = useRequestData([], `${BASE_URL}/profile`)
+  const [restaurant] = useRequestData([], `${BASE_URL}/restaurants/${cartRest}`)
 
-  
 
+  const valueAll = (cart[0]?.price * cart[0]?.quantity) + restaurant?.restaurant?.shipping
+
+  console.log(valueAll)
   return (
     <>
     <ContainerCart>
       <h3 className="myCart">Meu carrinho</h3>
 
       <div>
-        endereço
+        <p>Endereço de entrega</p>
+        <h4>{profile[0]?.user?.address}</h4>
       </div>
+      
+      <div>
+        {cart.length === 0? "": <a>{restaurant?.restaurant?.address}</a>
 
+        }
+      </div>
       <div>
         {cart.length === 0? <p>carrinho vazio</p>: cart.map((food)=>{
           return(
@@ -34,12 +46,15 @@ const CarPage = () => {
       <div className="payments">
 
         <div className="frete">
-        <h4>Frete R$0,00</h4>
+        <p>Frete R$</p>
+        {cart.length === 0? <p>0,00</p> : <p>{restaurant?.restaurant?.shipping}</p>}
+
         </div>
    
         <div className="priceAll">
           <h4>SUBTOTAL: </h4>
-          <h4>R$0,00</h4>
+          <p>R$</p>
+          {cart.length === 0? <p>0,00</p> : <p>{valueAll}</p>}
         </div>
 
         <div>

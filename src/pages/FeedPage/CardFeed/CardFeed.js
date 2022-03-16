@@ -6,7 +6,7 @@ import { goToRestaurant } from '../../../routes/coordinator'
 import GlobalStateContext from '../../../global/GlobalStateContext'
 
 const CardFeed = () => {
-    const {restaurants, loading} = useContext (GlobalStateContext)
+    const {restaurants, loading, setCartRest} = useContext (GlobalStateContext)
     const Navigate = useNavigate()
 
    useEffect(()=>{
@@ -14,6 +14,7 @@ const CardFeed = () => {
    
     const onClickInfoRestaurant = (id) => {
         goToRestaurant (Navigate, id)
+        setCartRest(id)
     }
 
     const restaurantList = restaurants?.restaurants && restaurants?.restaurants.map((rest) => {
