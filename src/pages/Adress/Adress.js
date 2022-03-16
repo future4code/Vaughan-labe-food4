@@ -38,8 +38,6 @@ const Adress = () =>{
        placeholder="Número"
        value={form.number}
        label={"Número"}
-       type="tel"
-       pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
        required
        onChange={onChange}
        />
@@ -80,7 +78,6 @@ const Adress = () =>{
        variant="outlined"
        margin="normal"
        type={"text"}
-       required
        onChange={onChange}
        />
       
