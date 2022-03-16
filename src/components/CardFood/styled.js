@@ -9,15 +9,7 @@ export const BoxBotton = styled(Box)`
 display: flex;
 justify-content: space-between;
 
-.popup{
-  position: fixed;
-  top: 50%;
-  left: 20px;
-  width: 90%;
-  background-color: #fff;
-  height: 30vh;
-  display: none;
-}
+
 `
 export const StyleButton = styled.button`
 font-size: 13px;
@@ -90,6 +82,15 @@ export const DivInfo = styled.div`
 `
 export const ConainerBottom = styled.div`
   margin-left: 20px;
+  .popup{
+  position: fixed;
+  top: 50%;
+  left: 20px;
+  width: 90%;
+  background-color: #fff;
+  height: 30vh;
+  display: none;
+}
 `
 export const Description = styled.p`
   font-size: 12px;
