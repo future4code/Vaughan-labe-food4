@@ -1,6 +1,6 @@
 import React from "react";
 import CardFeed from "./CardFeed/CardFeed";
-import {Title} from "./styled"
+import {Title, ContainerSearch} from "./styled"
 import Box from '@mui/material/Box'
 import OutlinedInput from '@mui/material/OutlinedInput'
 import InputAdornment from '@mui/material/InputAdornment'
@@ -22,7 +22,7 @@ const FeedPage = () => {
 
       <Box sx={{ display: 'flex', justifyContent: 'center' }}>
       <Divider />
-        <div>
+        <ContainerSearch>
           <FormControl sx={{ m: 1, width: '40ch' }} variant="outlined" >
             <OutlinedInput
                onClick={()=> goToSearch(navigate)}
@@ -34,7 +34,7 @@ const FeedPage = () => {
               placeholder="Restaurante"
             />
           </FormControl>
-        </div>
+        </ContainerSearch>
       </Box>
       <CardFeed/>
       <NavBarHome/>
