@@ -5,7 +5,7 @@ flex-direction: column;
 width: 100%;
 height: 100%;
 
-.myCart{
+.myUpDateProfile{
     display: flex;
     justify-content: center;
     border-bottom: 1px solid #dfdfdf;
