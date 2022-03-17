@@ -20,7 +20,8 @@ const GlobalState = (props) => {
         loading,
         removeTheFood,
         cartRest,
-        setCartRest
+        setCartRest,
+        setRestaurants
     }
     
     return(

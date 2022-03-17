@@ -13,7 +13,7 @@ const CardFood = () => {
     const params = useParams()
     const { loading } = useContext(GlobalStateContext)
     const [foods] = useRequestData([], `${BASE_URL}/restaurants/${params.id}`)
-
+    
     const openQuantity = (food) => {
         document.getElementById(`popup`).style.display = `block`
         setFood(food)
@@ -36,7 +36,7 @@ const CardFood = () => {
         setCart(newCart)
         exitQuantify()
     }
-    console.log(cart)
+    
 
     const onChange = (e) => {
         setAmount(e.target.value)
@@ -47,7 +47,7 @@ const CardFood = () => {
     })
 
     const onlyCategories = [...new Set(listOfCategories)]
-
+    
     const divisionCategories = onlyCategories && onlyCategories.map((type) => {
         return (
             <div key={type}>
@@ -56,14 +56,14 @@ const CardFood = () => {
                     return cat.category === type
                 })
                     .map((food) => {
-
+                        
                         return (
-                            <DivContainer>
+                            <DivContainer key={food.id}>
 
                                 <DivInfo>
 
                                     <div>
-                                        <ImgStyle src={food.photoUrl} alt={food.name} />
+                                        <ImgStyle src={food?.photoUrl} alt={food.name} />
                                     </div>
 
                                     <ConainerBottom>

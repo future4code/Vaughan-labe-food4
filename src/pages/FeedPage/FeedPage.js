@@ -1,6 +1,6 @@
 import React from "react";
 import CardFeed from "./CardFeed/CardFeed";
-import {Title, ContainerSearch} from "./styled"
+import {Title, ContainerSearch, Container} from "./styled"
 import Box from '@mui/material/Box'
 import OutlinedInput from '@mui/material/OutlinedInput'
 import InputAdornment from '@mui/material/InputAdornment'
@@ -16,10 +16,11 @@ const FeedPage = () => {
 
   return (
     <div>
+    
+    <Container>
       <Title>
       <h2>FutureEats</h2>
       </Title>
-
       <Box sx={{ display: 'flex', justifyContent: 'center' }}>
       <Divider />
         <ContainerSearch>
@@ -36,8 +37,13 @@ const FeedPage = () => {
           </FormControl>
         </ContainerSearch>
       </Box>
+      <div>
+       <h2>Hamburguer  Pasteis</h2>
+      </div>
       <CardFeed/>
       <NavBarHome/>
+    </Container>
+    
     </div>
   )
 }

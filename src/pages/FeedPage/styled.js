@@ -31,6 +31,7 @@ export const LoadingStyle = styled.div`
 export const InfoRestaurant = styled(Box)`
     display: flex;
     justify-content: space-between;
+
 `
 export const ContainerCard = styled.div`
     display: flex;
@@ -43,7 +44,6 @@ export const ContainerCard = styled.div`
    width: 315px;
 }
 `
-
 export const ContainerSearch = styled.div`
 @media screen and (max-width: 376px){ 
    margin: 14px;
@@ -52,3 +52,6 @@ export const ContainerSearch = styled.div`
    width: 300px;
 }
 `
+export const Container =styled.div`
+margin-bottom:75px
+` 
