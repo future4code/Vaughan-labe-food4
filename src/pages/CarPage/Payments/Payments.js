@@ -1,8 +1,8 @@
-import { FormControlLabel, FormGroup } from "@mui/material";
+import {  FormGroup, FormControlLabel } from "@mui/material";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { confirmPurchase } from "../../../services/Requests";
-import { ContainerForm, ButtonStyle } from "./styled";
+import { ContainerForm, ButtonStyle, FormPayment } from "./styled";
 import PanoramaFishEyeIcon from '@mui/icons-material/PanoramaFishEye';
 import RadioButtonCheckedIcon from '@mui/icons-material/RadioButtonChecked';
 
@@ -40,16 +40,12 @@ const Payments = ({ cart, resId }) => {
     const confirmBuy = () => {
         confirmPurchase(resId, body, navigate)
     }
-    console.log("credito", creditCard)
-    console.log("money", money)
-    console.log("payment", payments)
 
- 
     return (
         <ContainerForm>
-            <h3 className="payment">Formas de pagamento</h3>
+            <h3 className="paymentTitle">Formas de pagamento</h3>
 
-            <FormGroup color="color2">
+            <FormPayment color="color2" className="payments">
                
                  <FormControlLabel
                     control={money? <RadioButtonCheckedIcon />:<PanoramaFishEyeIcon />}
@@ -63,7 +59,7 @@ const Payments = ({ cart, resId }) => {
                     value={creditCard}
                     label="Cartão de Crédito"
                 />
-            </FormGroup>
+            </FormPayment>
 
             <div className="button">
                 {cart.length === 0 ?

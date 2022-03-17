@@ -14,7 +14,7 @@ const ProfilePage = () => {
   useEffect(() => {
 
   }, [historyOrden])
-  
+  console.log(historyOrden)
   return (
     <ContainerProfile>
       <h3 className="myUpDateProfile">Meu Perfil</h3>

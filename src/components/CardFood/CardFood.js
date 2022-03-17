@@ -35,7 +35,7 @@ const CardFood = () => {
         setCart(newCart)
         exitQuantify()
     }
-    console.log(cart)
+ 
 
     const onChange = (e) => {
         setAmount(e.target.value)
