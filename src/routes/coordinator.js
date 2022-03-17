@@ -32,3 +32,7 @@ export const goToSearch = (Navigate) => {
 export const goToEditLogin = (Navigate) => {
   Navigate("/profile/editProfile");
 }
+export const goToEditAddress = (Navigate) => {
+  Navigate("/profile/editAddress");
+}
+
