@@ -12,7 +12,16 @@ const CarPage = () => {
   const [restaurant] = useRequestData([], `${BASE_URL}/restaurants/${cartRest}`)
 
 
-  const valueAll = (cart[0]?.price * cart[0]?.quantity) + restaurant?.restaurant?.shipping
+ const valueAll = () =>{
+    let valueAllCart = 0
+    for (let valueCart of cart){
+      valueAllCart += valueCart.price * valueCart.quantity;
+    }
+    return valueAllCart + restaurant?.restaurant?.shipping
+
+}
+  
+  
   return (
     <>
     <ContainerCart>
@@ -50,7 +59,7 @@ const CarPage = () => {
    
         <div className="priceAll">
           <h4>SUBTOTAL: </h4>
-          {cart.length === 0? <p>R$0,00</p> : <p>R${valueAll}</p>}
+          {cart.length === 0? <p>R$0,00</p> : <p>R${valueAll()}</p>}
         </div>
 
         <div>

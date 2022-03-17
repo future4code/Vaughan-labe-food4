@@ -13,6 +13,9 @@ height: 100%;
     height: 40px;
     
 }
+.edit{
+    margin-right: 20px;
+}
 `
 export const ContainerInfoProfile = styled.div`
     display: flex;
