@@ -4,6 +4,8 @@ import UseForm from "../../hooks/useForm";
 import { useNavigate } from "react-router-dom";
 import { ContainerInput } from "./styled";
 import { adress } from "../../services/Requests";
+import { goToProfile } from "../../routes/coordinator";
+import back from "../../assets/back.png"
 const Adress = () =>{
     const navigate = useNavigate()
     const {form, onChange, clearFields} = UseForm({
@@ -22,7 +24,9 @@ const Adress = () =>{
       }
     return (  
         <ContainerInput>
-        <h2>Meu endereço</h2>
+        <h3 className="address">
+        <img onClick={()=> goToProfile(navigate)} src={back} alt={"back"}/>
+          Endereço</h3>
         <form onSubmit={submit}>
          <TextField
         name={"street"}
@@ -65,7 +69,7 @@ const Adress = () =>{
        value={form.state}
        label={"Estado"}
        variant="outlined"
-       margin="normal"
+       
        type={"text"}
        required
        onChange={onChange}
@@ -76,11 +80,10 @@ const Adress = () =>{
        value={form.complement}
        label={"Complemento"}
        variant="outlined"
-       margin="normal"
+       
        type={"text"}
        onChange={onChange}
        />
-      
        <Button variant="contained" color={"primary"} type="submit">Salvar</Button>
        </form>
        </ContainerInput> 
