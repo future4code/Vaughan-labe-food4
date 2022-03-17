@@ -3,7 +3,8 @@ import { useParams } from "react-router-dom"
 import useRequestData from "../../hooks/useRequestData"
 import { BASE_URL } from "../../constants/url"
 import GlobalStateContext from '../../global/GlobalStateContext'
-import { DivContainer, PriceFood, NameFood, Description, ConainerBottom, DivInfo, ImgStyle, Button, LoadingStyle, TitleCategory } from './styled'
+import { DivContainer, StyleSelect, ButtonPopup, PriceFood, NameFood,
+ Description, ConainerBottom, TitlePopup, ContainerPopup,  DivButtonPopup, DivInfo, ImgStyle, Button, LoadingStyle, TitleCategory } from './styled'
 
 const CardFood = () => {
     const [amount, setAmount] = useState(0)
@@ -72,9 +73,11 @@ const CardFood = () => {
                                             <Description>{food.description}</Description>
                                         </div>
 
+                                        
                                         <div id="popup" className="popup">
-                                            <p>Selecione a quantidade desejada</p>
-                                            <select onChange={onChange}>
+                                        <ContainerPopup>
+                                            <TitlePopup>Selecione a quantidade desejada</TitlePopup>
+                                            <StyleSelect onChange={onChange}>
                                                 <option>0</option>
                                                 <option>1</option>
                                                 <option>2</option>
@@ -86,8 +89,11 @@ const CardFood = () => {
                                                 <option>8</option>
                                                 <option>9</option>
                                                 <option>10</option>
-                                            </select>
-                                            <a onClick={() => addToCart()}>adicionar</a>
+                                            </StyleSelect>
+                                            <DivButtonPopup>
+                                            <ButtonPopup onClick={() => addToCart()}>adicionar ao carrinho</ButtonPopup>
+                                            </DivButtonPopup>
+                                            </ContainerPopup>
                                         </div>
 
                                         <div>
