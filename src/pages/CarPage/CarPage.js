@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
 import Payments from "./Payments/Payments";
 import GlobalStateContext from "../../global/GlobalStateContext";
-import { ContainerCart } from "./styled";
+import { ContainerCart, ButtonStyle } from "./styled";
 import NavBarCart from "../../components/NavBar/NavBarCart";
 import useRequestData from "../../hooks/useRequestData";
 import { BASE_URL } from "../../constants/url";
+import { Button } from "@mui/material";
 
 const CarPage = () => {
   const {cart, setCart, removeTheFood, cartRest} = useContext(GlobalStateContext)  
@@ -14,15 +15,14 @@ const CarPage = () => {
 
   const valueAll = (cart[0]?.price * cart[0]?.quantity) + restaurant?.restaurant?.shipping
 
-  console.log(valueAll)
   return (
     <>
     <ContainerCart>
       <h3 className="myCart">Meu carrinho</h3>
 
-      <div>
-        <p>Endereço de entrega</p>
-        <h4>{profile[0]?.user?.address}</h4>
+      <div className="address">
+        <p className="p1">Endereço de entrega</p>
+        <p className="p2">{profile[0]?.user?.address}</p>
       </div>
       
       <div>
@@ -48,13 +48,11 @@ const CarPage = () => {
         <div className="frete">
         <p>Frete R$</p>
         {cart.length === 0? <p>0,00</p> : <p>{restaurant?.restaurant?.shipping}</p>}
-
         </div>
    
         <div className="priceAll">
           <h4>SUBTOTAL: </h4>
-          <p>R$</p>
-          {cart.length === 0? <p>0,00</p> : <p>{valueAll}</p>}
+          {cart.length === 0? <p>R$0,00</p> : <p>R${valueAll}</p>}
         </div>
 
         <div>
@@ -63,8 +61,15 @@ const CarPage = () => {
       
       </div>
 
-      <NavBarCart className="navbar"/>
+      <div className="button">
+      {cart.length === 0? 
+        <ButtonStyle variant="contained" disabled>Confirmar</ButtonStyle>
+        :
+        <ButtonStyle variant="contained" color={"primary"}>Confirmar</ButtonStyle>
+      }
+      </div>
 
+      <NavBarCart className="navbar"/>
       </ContainerCart>
     </>
   )

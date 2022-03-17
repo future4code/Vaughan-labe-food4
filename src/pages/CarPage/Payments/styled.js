@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Button} from "@mui/material";
 
 export const ContainerForm = styled.div`
 .payment{
@@ -8,9 +7,4 @@ export const ContainerForm = styled.div`
     width: 100%;
     margin: 0;
 }
-`
-
-export const ButtonStyle = styled(Button)`
-width: 100%;
-border-radius: 1px;
 `
