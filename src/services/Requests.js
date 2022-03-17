@@ -64,3 +64,16 @@ export const UpDateAdress = (body, clear, navigate) =>{
     console.log(error.response)
   })
 }
+
+export const confirmPurchase = ( resId, body, navigate ) => {
+  const token = window.localStorage.getItem(`token`)
+  const axiosConfig = {headers: { auth: token }}
+
+  axios.post(`${BASE_URL}/restaurants/${resId}/order`, body, axiosConfig)
+  .then((res)=>{
+    goToFeed(navigate)
+  })
+  .catch((error)=>{
+    alert(error.response.data.message)
+  })
+}

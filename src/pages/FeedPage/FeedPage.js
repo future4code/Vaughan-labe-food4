@@ -10,10 +10,14 @@ import Divider from '@mui/material/Divider';
 import NavBarHome from "../../components/NavBar/NarBarHome";
 import { goToSearch } from "../../routes/coordinator";
 import  {useNavigate} from "react-router-dom";
+import ActiveOrder from "../../components/ActiveOrder/ActiveOrder";
+import useRequestData from "../../hooks/useRequestData";
+import { BASE_URL } from "../../constants/url";
 
 const FeedPage = () => {
    const navigate = useNavigate()
 
+  
   return (
     <div>
     
@@ -41,6 +45,7 @@ const FeedPage = () => {
        <h2>Hamburguer  Pasteis</h2>
       </div>
       <CardFeed/>
+      <ActiveOrder />
       <NavBarHome/>
     </Container>
     

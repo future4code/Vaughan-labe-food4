@@ -13,16 +13,14 @@ const CarPage = () => {
 
 
   const valueAll = (cart[0]?.price * cart[0]?.quantity) + restaurant?.restaurant?.shipping
-
-  console.log(valueAll)
   return (
     <>
     <ContainerCart>
       <h3 className="myCart">Meu carrinho</h3>
 
-      <div>
-        <p>Endereço de entrega</p>
-        <h4>{profile[0]?.user?.address}</h4>
+      <div className="address">
+        <p className="p1">Endereço de entrega</p>
+        <p className="p2">{profile[0]?.user?.address}</p>
       </div>
       
       <div>
@@ -48,23 +46,20 @@ const CarPage = () => {
         <div className="frete">
         <p>Frete R$</p>
         {cart.length === 0? <p>0,00</p> : <p>{restaurant?.restaurant?.shipping}</p>}
-
         </div>
    
         <div className="priceAll">
           <h4>SUBTOTAL: </h4>
-          <p>R$</p>
-          {cart.length === 0? <p>0,00</p> : <p>{valueAll}</p>}
+          {cart.length === 0? <p>R$0,00</p> : <p>R${valueAll}</p>}
         </div>
 
         <div>
-        <Payments/>
+        <Payments cart={cart} resId={cartRest}/>
         </div>
       
       </div>
 
       <NavBarCart className="navbar"/>
-
       </ContainerCart>
     </>
   )
