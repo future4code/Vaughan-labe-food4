@@ -20,6 +20,7 @@ const CardFeed = () => {
     const restaurantList = restaurants?.restaurants && restaurants?.restaurants.map((rest) => {
 
         return (
+            
             <ContainerCard key={rest.id}>
 
                 <Card sx={{display: "flex", justifyContent: "center", borderRadius: 3, border: 1, borderColor: '#c4c4c4', width: 378}}>
@@ -42,12 +43,11 @@ const CardFeed = () => {
                                 <Typography variant="body1" color="text.secondary">
                                       Frete: R${rest.shipping},00
                                 </Typography>
+                                
                             </InfoRestaurant>
                         </CardContent>
                     </CardActionArea>
-
                 </Card>
-                
             </ContainerCard>
         )
     })
