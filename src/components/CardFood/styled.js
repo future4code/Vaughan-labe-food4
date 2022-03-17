@@ -82,15 +82,43 @@ export const DivInfo = styled.div`
 `
 export const ConainerBottom = styled.div`
   margin-left: 20px;
-  .popup{
+.popup{
   position: fixed;
   top: 50%;
   left: 20px;
-  width: 90%;
+  width: 328px;
   background-color: #fff;
   height: 30vh;
   display: none;
 }
+`
+export const StyleSelect = styled.select`
+  border: 1px solid #c5c5c5;
+  background-color: white;
+  border-radius: 5px;
+  width: 296px;
+  height: 56px;
+`
+export const ContainerPopup = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+`
+export const ButtonPopup = styled.a`
+  color: #5cb646;
+  font-size: 16px;
+  text-transform: uppercase;
+`
+export const DivButtonPopup = styled.div`
+  display: flex;
+  margin-left: 100px;
+`
+export const TitlePopup = styled.p`
+  margin-top: 30px;
+  font-size: 16px;
+  font-weight: 470;
 `
 export const Description = styled.p`
   font-size: 12px;
