@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Button} from "@mui/material";
 
 export const ContainerCart = styled.div`
 display: flex;
@@ -59,15 +58,4 @@ height: 100%;
     width: 100%;
 }
 
-.button{
-    position: fixed;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    bottom: 8vh;
-}
-`
-export const ButtonStyle = styled(Button)`
-width: 90%;
-border-radius: 1px;
 `

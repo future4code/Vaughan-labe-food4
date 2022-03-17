@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Button} from "@mui/material";
 
 export const ContainerForm = styled.div`
 .payment{
@@ -7,4 +8,15 @@ export const ContainerForm = styled.div`
     width: 100%;
     margin: 0;
 }
+.button{
+    position: fixed;
+    display: flex;
+    justify-content: flex-start;   
+    width: 100%;
+    bottom: 8vh;
+}
+`
+export const ButtonStyle = styled(Button)`
+width: 90%;
+border-radius: 1px;
 `

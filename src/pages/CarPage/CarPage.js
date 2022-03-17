@@ -1,11 +1,10 @@
 import React, { useContext } from "react";
 import Payments from "./Payments/Payments";
 import GlobalStateContext from "../../global/GlobalStateContext";
-import { ContainerCart, ButtonStyle } from "./styled";
+import { ContainerCart } from "./styled";
 import NavBarCart from "../../components/NavBar/NavBarCart";
 import useRequestData from "../../hooks/useRequestData";
 import { BASE_URL } from "../../constants/url";
-import { Button } from "@mui/material";
 
 const CarPage = () => {
   const {cart, setCart, removeTheFood, cartRest} = useContext(GlobalStateContext)  
@@ -14,7 +13,6 @@ const CarPage = () => {
 
 
   const valueAll = (cart[0]?.price * cart[0]?.quantity) + restaurant?.restaurant?.shipping
-
   return (
     <>
     <ContainerCart>
@@ -56,17 +54,9 @@ const CarPage = () => {
         </div>
 
         <div>
-        <Payments/>
+        <Payments cart={cart} resId={cartRest}/>
         </div>
       
-      </div>
-
-      <div className="button">
-      {cart.length === 0? 
-        <ButtonStyle variant="contained" disabled>Confirmar</ButtonStyle>
-        :
-        <ButtonStyle variant="contained" color={"primary"}>Confirmar</ButtonStyle>
-      }
       </div>
 
       <NavBarCart className="navbar"/>
