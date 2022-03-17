@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import { Box } from '@mui/material'
 
 export const Title = styled.div`
     display: flex;
@@ -16,3 +16,27 @@ export const Title = styled.div`
     }
 `
 
+export const InfoRestaurant = styled(Box)`
+    display: flex;
+    justify-content: space-between;
+`
+export const ContainerCard = styled.div`
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+@media screen and (max-width: 376px){ 
+   margin: 14px;
+}
+@media screen and (max-width: 321px){ 
+   width: 315px;
+}
+`
+
+export const ContainerSearch = styled.div`
+@media screen and (max-width: 376px){ 
+   margin: 14px;
+}
+@media screen and (max-width: 321px){ 
+   width: 300px;
+}
+`
