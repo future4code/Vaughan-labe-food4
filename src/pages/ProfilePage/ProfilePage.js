@@ -5,7 +5,7 @@ import { BASE_URL } from "../../constants/url"
 import { ContainerProfile, ContainerInfoProfile, ContainerImgProfile, ContainerMap, ContainerAddress } from "./styled";
 import edit from "../../assets/edit@2x.png"
 import { useNavigate } from "react-router-dom";
-import { goToEditLogin } from "../../routes/coordinator";
+import { goToAdress, goToEditLogin } from "../../routes/coordinator";
 
 const ProfilePage = () => {
   const getProfile = useRequestData([], `${BASE_URL}/profile`)
@@ -21,20 +21,20 @@ const ProfilePage = () => {
       
       <ContainerInfoProfile>
         <ContainerImgProfile>
-          <button onClick={()=> goToEditLogin(navigate)}><img src={edit} alt={"Imagem de editar"} /></button>
+          <button onClick={()=> goToEditLogin(navigate)}><img onClick={()=> goToEditLogin(navigate)} src={edit} alt={"Imagem de editar"} /></button>
         </ContainerImgProfile>
 
         {getProfile && getProfile?.map((profile) => {
           return (
             <ContainerMap>
-              <p>{profile.user?.name}</p>
+              <p>{profile.user?.name} </p>
               <p>{profile.user?.email}</p>
             </ContainerMap>
           )
         })}
         <ContainerAddress>
-          <p>Endereço</p>
-          <h3>{getProfile && getProfile[0]?.user?.address}</h3>
+          <p>Endereço <img onClick={()=> goToAdress(navigate)} src={edit} alt={"back"}/></p>
+          <p>{getProfile && getProfile[0]?.user?.address} </p>
         </ContainerAddress>
       </ContainerInfoProfile>
       <NavBarProfile />

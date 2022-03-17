@@ -11,6 +11,7 @@ height: 100%;
     border-bottom: 1px solid #dfdfdf;
     width: 100%;
     height: 40px;
+    
 }
 `
 export const ContainerInfoProfile = styled.div`
@@ -45,6 +46,11 @@ export const ContainerMap = styled.div`
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
+    margin: 0 25px;
+    p{
+        
+        font-size: 18px;
+    }
     
 `
 export const ContainerAddress = styled.div`
@@ -52,6 +58,14 @@ export const ContainerAddress = styled.div`
     bottom: 8rem;
     background-color: #eeeeee;
     p{
-        text-align: center;
+        display: flex;
+        justify-content: space-between;
+        color:#b8b8b8;
+        img{
+            width: 34px;
+            height: 34px;
+            
+        }
+        
     }
 `
