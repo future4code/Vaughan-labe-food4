@@ -2,8 +2,7 @@ import React, { useContext, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import GlobalStateContext from '../../../global/GlobalStateContext'
 import { Card, CardContent, CardMedia, Typography} from "@mui/material"
-import { InfoRestaurant, LoadingStyle } from './styled'
-import CardFood from "../../../components/CardFood/CardFood"
+import { InfoRestaurant, LoadingStyle, ContainerCard } from './styled'
 
 const CardRestaurant = () => {
     
@@ -20,14 +19,14 @@ const CardRestaurant = () => {
         })
         .map((rest) => {
             return (
-                <div key={rest.id}>
-                    <Card sx={{ maxWidth: 345 }}>
+                <ContainerCard key={rest.id}>
+                    <Card sx={{display: "flex", flexDirection: "column", justifyContent: "center", borderRadius: 3, border: 1, borderColor: '#c4c4c4', width: 350}}>
 
                         <CardMedia
                             component="img"
-                            height="140"
+                            height="100"
                             image={rest.logoUrl}
-                            alt="green iguana"
+                            alt= {rest.name}
                         />
 
                         <CardContent>
@@ -57,14 +56,13 @@ const CardRestaurant = () => {
                         </CardContent>
 
                     </Card>
-                </div>
+                </ContainerCard>
             )
         })
 
     return (
         <div>
             {loading ? <LoadingStyle></LoadingStyle> : infoRestaurant}
-            <CardFood/>
         </div >
     )
 }
