@@ -1,19 +1,28 @@
-import React, { useContext, useState } from "react";
-import {Title} from "./styled"
+import React, { useContext, useEffect, useState } from "react";
+import {ContainerSearch, ContainerCard, InfoRestaurant, Title} from "./styled"
 import Box from '@mui/material/Box'
 import OutlinedInput from '@mui/material/OutlinedInput'
 import InputAdornment from '@mui/material/InputAdornment'
 import FormControl from '@mui/material/FormControl'
 import SearchIcon from '@mui/icons-material/Search'
 import Divider from '@mui/material/Divider';
-import { Button } from "@mui/material";
+import { Button, Card, CardActionArea, CardContent, CardMedia, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import { goToFeed } from "../../routes/coordinator";
+import { goToFeed, goToRestaurant } from "../../routes/coordinator";
 import GlobalStateContext from "../../global/GlobalStateContext";
 
 const SearchPage = () => {
-  const {restaurants} = useContext(GlobalStateContext)
+  const {restaurants,setCartRest} = useContext(GlobalStateContext)
   const [input, setInput] = useState("");
+    const Navigate = useNavigate()
+
+   useEffect(()=>{
+   },[restaurants])
+   
+    const onClickInfoRestaurant = (id) => {
+        goToRestaurant (Navigate, id)
+        setCartRest(id)
+    }
 
   const onChangeInput = (event) => {
     setInput(event.target.value);
@@ -23,9 +32,36 @@ const SearchPage = () => {
       ?false
       : restaurant?.name.toLowerCase().includes(input.toLowerCase())  
   })
-  
   .map((restaurant) => {
-    return <p>{restaurant.name}</p>
+      return <ContainerCard key={restaurant.id}>
+
+      <Card sx={{display: "flex", justifyContent: "center", borderRadius: 3, border: 1, borderColor: '#c4c4c4', width: 378}}>
+
+          <CardActionArea onClick={() => onClickInfoRestaurant(restaurant.id)}>
+              <CardMedia
+                  component="img"
+                  height="100"
+                  image={restaurant.logoUrl}
+                  alt= {restaurant.name}
+              />
+              <CardContent>
+                  <Typography gutterBottom variant="h6" color="primary" component="div">
+                      {restaurant.name}
+                  </Typography>
+                  <InfoRestaurant>
+                      <Typography variant="body1" color="text.secondary">
+                          {restaurant.deliveryTime} min
+                      </Typography>
+                      <Typography variant="body1" color="text.secondary">
+                            Frete: R${restaurant.shipping},00
+                      </Typography>
+                  </InfoRestaurant>
+              </CardContent>
+          </CardActionArea>
+
+      </Card>
+      
+  </ContainerCard>
   })
 
   const navigate = useNavigate()
@@ -56,7 +92,6 @@ const SearchPage = () => {
               value={input} 
               onChange={onChangeInput}
             />
-            
           </FormControl>
           {restaurantFilter}
         </div>
