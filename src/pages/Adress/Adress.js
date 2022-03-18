@@ -9,18 +9,19 @@ import back from "../../assets/back.png"
 
 const Adress = () =>{
     const navigate = useNavigate()
-    const {form, onChange, clearFields} = UseForm({
+    const {form, onChange, clearFields} = UseForm(
+      {
         street: "",
         number: "",
         neighbourhood: "",
         city: "",
         state: "",
         complement: ""
-      })
+      }
+      )
       const submit = (event) =>{
         event.preventDefault()
         adress(form, clearFields, navigate)
-        console.log(form)
         clearFields()
       }
     return (  
