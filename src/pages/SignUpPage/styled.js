@@ -5,6 +5,13 @@ export const ContainerInput = styled.div`
     align-items: center;
     width: 100vw;
     height: 100%;
+    .address {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #dfdfdf;
+    width: 100%;
+    height: 40px;
+    }
     form{
         display: grid;
         gap: 1rem;
@@ -16,18 +23,23 @@ export const ContainerInput = styled.div`
         text-align: center;
     }
 `
+export const BackImg = styled.img`
+    position: fixed;
+    left: 25px;
+    width: 24px;
+    height: 24px;
+`
 export const ContairnerImg = styled.div`
     display: grid;
     justify-content: center;
     align-items: center;
     margin: 10px;
-    margin-top: 65px;
-    img{
+`
+export const LogoImg = styled.img`
         display: grid;
         justify-content: center;
         align-items: center;
         width: 104px;
-    }
 `
 export const ContainerField = styled.div`
     display: flex;

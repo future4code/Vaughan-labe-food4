@@ -2,10 +2,12 @@ import { TextField, InputAdornment } from "@mui/material"
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import React, {useState} from "react"
 import UseForm from "../../hooks/useForm"
-import { ContainerInput, ContairnerImg, ContainerField, Button } from "./styled"
+import back from "../../assets/back.png"
+import { ContainerInput, ContairnerImg, ContainerField, Button, LogoImg, BackImg } from "./styled"
 import logo from "../../assets/logo-future-eats-invert@2x.png"
 import { signUp } from "../../services/Requests"
 import { useNavigate } from "react-router-dom"
+import { goToLogin } from "../../routes/coordinator";
 
 const SignUpForm = () => {
   const navigate = useNavigate()
@@ -42,13 +44,16 @@ const SignUpForm = () => {
 
   return (
     <ContainerInput>
+      <h3 className="address">
+        <BackImg onClick={()=> goToLogin(navigate)} src={back} alt={"back"}/>
+      </h3>
+
       <ContairnerImg>
-        <img src={logo} alt={"Logo"} />
+        <LogoImg src={logo} alt={"Logo"} />
       </ContairnerImg>
 
       <p>Cadastrar</p>
 
-      
       <form onSubmit={submit}>
       <ContainerField>
         <TextField
