@@ -1,17 +1,15 @@
 
 import styled from 'styled-components'
-
 export const ContainerFilter=styled.div`
 .mySwiper{
     display: inline;
     gap: 20px;
-   
+    
 }
 .swiper {
   width: 20%;
   height: 100%;
  
-
 }
 
 .swiper-slide {
@@ -19,8 +17,6 @@ export const ContainerFilter=styled.div`
   font-size: 18px;
   background: #fff;
   
-
-
   /* Center slide text vertically */
   display: -webkit-box;
   display: -ms-flexbox;
@@ -35,13 +31,18 @@ export const ContainerFilter=styled.div`
   -webkit-align-items: center;
   align-items: center;
   
-
 }
 .Slide{
     display: inline;
-    width: 100vw;
-    overflow: hidden;
-   
+     margin-right: 30px;
+     color: black;
+     &:active{
+     color: #5CB646;
+}
+:focus{
+  color: #5CB646;
+/*aqui está a resolução aqui define a cor que o botão deve receber depois de clicar*/
+}
     
 }
 .swiper-slide img {
@@ -49,9 +50,9 @@ export const ContainerFilter=styled.div`
   width: 100%;
   height: 100%;
   object-fit: cover;
-  
 
 }
 
 `
+
 

@@ -10,7 +10,6 @@ import Divider from '@mui/material/Divider';
 import NavBarHome from "../../components/NavBar/NarBarHome";
 import { goToSearch } from "../../routes/coordinator";
 import  {useNavigate} from "react-router-dom";
-import { Swiper,SwiperSlide } from 'swiper/react';
 import Filter from "./Filter/Filter";
 
 
