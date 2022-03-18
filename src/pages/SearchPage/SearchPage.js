@@ -84,22 +84,22 @@ const SearchPage = () => {
       <div>
         <FormControl sx={{ m: 1, width: '40ch' }} variant="outlined" >
           <OutlinedInput
-
-              type={'text'}
-              startAdornment={
-                <InputAdornment position="start">
-                  <SearchIcon />
-                </InputAdornment>}
-              placeholder="Restaurante"
-              value={input} 
-              onChange={onChangeInput}
-            />
-          </FormControl>
-          {restaurantFilter}
-        </div>
-      </Box> 
-    </div>
-  )
+            type={'text'}
+            startAdornment={
+              <InputAdornment position="start">
+                <SearchIcon />
+              </InputAdornment>}
+            placeholder="Restaurante"
+            value={input}
+            onChange={onChangeInput}
+          />
+        </FormControl>
+        
+        {restaurantFilter}
+      </div>
+    </Box>
+  </div>
+)
 }
 
 export default SearchPage

@@ -1,36 +1,37 @@
-import React, { useContext, useRef} from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { ContainerFilter } from "./style";
+import React from 'react';
+import {Tab, Tabs, Box} from "@mui/material"
 
+const CategoriesFilter = (props) => {
+    const [value, setValue] = React.useState(0);
+    const { handleCategory} = props
+    
+    const handleChange = (event, newValue) => {
+        setValue(newValue);
+    }
 
+    return (
 
-const Filter=()=> {
-  
- const onclick=(ev)=>{
+        <Box sx={{ maxWidth: 350 }}>
+            <Tabs
+                onChange={handleChange}
+                value={value}
+                variant='scrollable'
+                scrollButtons={false}
 
- }
-
-  return (
-    <ContainerFilter>
-      <Swiper className="mySwiper">
-         
-        <SwiperSlide className="Slide 1">Hamburguer</SwiperSlide>
-        <SwiperSlide className="Slide 2" class="swiper-button-next" onclick>Mexicano</SwiperSlide>
-        <SwiperSlide className="Slide 4" class="swiper-button-next" onclick>Arabe</SwiperSlide>
-        <SwiperSlide className="Slide 5" class="swiper-button-next" onclick>Sorvete</SwiperSlide>
-        <SwiperSlide className="Slide 6" class="swiper-button-next" onclick>Comidas</SwiperSlide>
-        <SwiperSlide className="Slide 7" class="swiper-button-next" onclick>Salgados</SwiperSlide>
-        <SwiperSlide className="Slide 8" class="swiper-button-next" onclick>Hamburguer</SwiperSlide>
-
-        {/* <SwiperSlide className="Slide 2">Arabe</SwiperSlide>
-        <SwiperSlide className="Slide 3">Mexicano</SwiperSlide>
-        <SwiperSlide className="Slide 4">Sorvete</SwiperSlide>
-        <SwiperSlide className="Slide 5">Bebidas</SwiperSlide>
-        <SwiperSlide className="Slide 6">Comidas</SwiperSlide>
-        <SwiperSlide className="Slide 7">Salgados</SwiperSlide>
-         */}
-      </Swiper>
-    </ContainerFilter>
-  );
+                indicatorColor="transparent" 
+            >
+                <Tab style={{ textTransform: 'none', fontSize: 16 }} onClick={() => handleCategory('')} label="Todos" />
+                <Tab style={{ textTransform: 'none', fontSize: 16 }} onClick={() => handleCategory("Árabe")} label="Árabe" />
+                <Tab style={{ textTransform: 'none', fontSize: 16 }} onClick={() => handleCategory("Asiática")} label="Asiática" />
+                <Tab style={{ textTransform: 'none', fontSize: 16 }} onClick={() => handleCategory("Hamburguer")} label="Hamburguer" />    
+                <Tab style={{ textTransform: 'none', fontSize: 16 }} onClick={() => handleCategory("Italiana")} label="Italiana" />
+                <Tab style={{ textTransform: 'none', fontSize: 16 }} onClick={() => handleCategory("Sorvetes")} label="Sorvetes" />
+                <Tab style={{ textTransform: 'none', fontSize: 16 }} onClick={() => handleCategory("Carnes")} label="Carnes" />
+                <Tab style={{ textTransform: 'none', fontSize: 16 }} onClick={() => handleCategory("Baiana")} label="Baiana" />
+                <Tab style={{ textTransform: 'none', fontSize: 16 }} onClick={() => handleCategory("Petiscos")} label="Petiscos" />
+                <Tab style={{ textTransform: 'none', fontSize: 16 }} onClick={() => handleCategory("Mexicana")} label="Mexicana" />
+            </Tabs>
+        </Box>
+    )
 }
-export default Filter;
+export default CategoriesFilter

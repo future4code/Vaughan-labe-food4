@@ -43,7 +43,7 @@ const Adress = () =>{
         />
        <TextField
        name={"number"}
-       placeholder="Apto./Bloco"
+       placeholder="Número"
        value={form.number}
        label={"Número"}
        required
@@ -51,7 +51,7 @@ const Adress = () =>{
        />
        <TextField
        name={"complement"}
-       placeholder="Complemento"
+       placeholder="Apto./Bloco"
        value={form.complement}
        label={"Complemento"}
        variant="outlined"
