@@ -1,9 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-<<<<<<< HEAD
 import {HeaderContainer, ContainerCard, InfoRestaurant, Title, H2} from "./styled"
-=======
-import { ContainerSearch, ContainerCard, InfoRestaurant, Title } from "./styled"
->>>>>>> master
 import Box from '@mui/material/Box'
 import OutlinedInput from '@mui/material/OutlinedInput'
 import InputAdornment from '@mui/material/InputAdornment'
