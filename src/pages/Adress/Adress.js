@@ -1,11 +1,12 @@
 import React from "react"
-import { Button, TextField } from "@mui/material";
+import { TextField } from "@mui/material";
 import UseForm from "../../hooks/useForm";
 import { useNavigate } from "react-router-dom";
-import { ContainerInput } from "./styled";
+import { ContainerInput, Button } from "./styled";
 import { adress } from "../../services/Requests";
-import { goToProfile } from "../../routes/coordinator";
+import { goToSingUp } from "../../routes/coordinator";
 import back from "../../assets/back.png"
+
 const Adress = () =>{
     const navigate = useNavigate()
     const {form, onChange, clearFields} = UseForm(
@@ -26,24 +27,36 @@ const Adress = () =>{
     return (  
         <ContainerInput>
         <h3 className="address">
-        <img onClick={()=> goToProfile(navigate)} src={back} alt={"back"}/>
-          Endereço</h3>
+        <img onClick={()=> goToSingUp(navigate)} src={back} alt={"back"}/>
+        </h3>
         <form onSubmit={submit}>
-         <TextField
+
+        <p>Meu endereço</p>
+        <TextField
         name={"street"}
-        placeholder="Rua"
+        placeholder="Rua/Av."
         value={form.street}
-        label={"Rua"}
+        label={"Logradouro"}
         type={"text"}
         required
         onChange={onChange}
         />
        <TextField
        name={"number"}
-       placeholder="Número"
+       placeholder="Apto./Bloco"
        value={form.number}
        label={"Número"}
        required
+       onChange={onChange}
+       />
+       <TextField
+       name={"complement"}
+       placeholder="Complemento"
+       value={form.complement}
+       label={"Complemento"}
+       variant="outlined"
+       
+       type={"text"}
        onChange={onChange}
        />
        <TextField
@@ -73,16 +86,6 @@ const Adress = () =>{
        
        type={"text"}
        required
-       onChange={onChange}
-       />
-       <TextField
-       name={"complement"}
-       placeholder="Complemento"
-       value={form.complement}
-       label={"Complemento"}
-       variant="outlined"
-       
-       type={"text"}
        onChange={onChange}
        />
        <Button variant="contained" color={"primary"} type="submit">Salvar</Button>

@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import { Box } from '@mui/material'
+import {Swiper} from 'swiper/react'
 
 export const Title = styled.div`
     display: flex;
@@ -53,5 +54,14 @@ export const ContainerSearch = styled.div`
 }
 `
 export const Container =styled.div`
-margin-bottom:75px
+margin-bottom:75px;
+.Cont{
+    display: flex;
+    flex-direction: row;
+}
 ` 
+export const MySwiper =styled(Swiper)`
+display: flex;
+
+
+`
