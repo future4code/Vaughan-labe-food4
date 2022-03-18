@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import { Box } from '@mui/material'
+import {Swiper} from 'swiper/react'
 
 export const Title = styled.div`
     display: flex;
@@ -31,6 +32,7 @@ export const LoadingStyle = styled.div`
 export const InfoRestaurant = styled(Box)`
     display: flex;
     justify-content: space-between;
+
 `
 export const ContainerCard = styled.div`
     display: flex;
@@ -43,7 +45,6 @@ export const ContainerCard = styled.div`
    width: 315px;
 }
 `
-
 export const ContainerSearch = styled.div`
 @media screen and (max-width: 376px){ 
    margin: 14px;
@@ -51,4 +52,16 @@ export const ContainerSearch = styled.div`
 @media screen and (max-width: 321px){ 
    width: 300px;
 }
+`
+export const Container =styled.div`
+margin-bottom:75px;
+.Cont{
+    display: flex;
+    flex-direction: row;
+}
+` 
+export const MySwiper =styled(Swiper)`
+display: flex;
+
+
 `

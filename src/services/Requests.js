@@ -1,6 +1,6 @@
 import axios from "axios"
 import { BASE_URL } from "../constants/url";
-import { goToAdress, goToFeed } from "../routes/coordinator";
+import { goToAdress, goToFeed, goToProfile, goToLogin } from "../routes/coordinator";
 
 export const login = (body, clear, navigate) => {
   
@@ -39,9 +39,59 @@ export const adress = (body, clear, navigate) =>{
   .then((response)=>{
     console.log(response.data)
     clear()
-    goToFeed(navigate)
+    goToLogin(navigate)
+    localStorage.removeItem("token")
   })
   .catch((error)=>{
     console.log(error.response)
+  })
+}
+
+export const editProfile = (body, clear, navigate) => {
+  const axiosConfig = {
+    headers:{
+      auth: window.localStorage.getItem("token")
+    }
+  }
+  axios.put(`${BASE_URL}/profile`, body, axiosConfig
+     ).then((response) => {
+          console.log("te amo",response.data)
+          clear()
+          goToProfile(navigate)
+      })
+      .catch((error) => {
+          console.log(error.response)
+      })
+
+}
+
+export const UpDateAdress = (body, clear, navigate) =>{
+  const axiosConfig = {
+    headers:{
+      auth: window.localStorage.getItem("token")
+    }
+  }
+  axios.put(`${BASE_URL}/address`, body, axiosConfig)
+  .then((response)=>{
+    console.log(response.data)
+    clear()
+    goToProfile(navigate)
+    
+  })
+  .catch((error)=>{
+    console.log(error.response)
+  })
+}
+
+export const confirmPurchase = ( resId, body, navigate ) => {
+  const token = window.localStorage.getItem(`token`)
+  const axiosConfig = {headers: { auth: token }}
+
+  axios.post(`${BASE_URL}/restaurants/${resId}/order`, body, axiosConfig)
+  .then((res)=>{
+    goToFeed(navigate)
+  })
+  .catch((error)=>{
+    alert(error.response.data.message)
   })
 }

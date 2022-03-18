@@ -29,3 +29,10 @@ export const goToRestaurant = (Navigate, id) => {
 export const goToSearch = (Navigate) => {
   Navigate("/search");
 }
+export const goToEditLogin = (Navigate) => {
+  Navigate("/profile/editProfile");
+}
+export const goToEditAddress = (Navigate) => {
+  Navigate("/profile/editAddress");
+}
+

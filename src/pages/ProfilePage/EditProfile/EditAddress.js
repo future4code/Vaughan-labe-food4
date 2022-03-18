@@ -1,62 +1,48 @@
 import React from "react"
-import { TextField } from "@mui/material";
-import UseForm from "../../hooks/useForm";
+import UseForm from "../../../hooks/useForm"
+import { Button, TextField } from "@mui/material";
+import { ContainerInput } from "../../Adress/styled";
+import back from "../../../assets/back.png"
+import { goToProfile } from "../../../routes/coordinator";
 import { useNavigate } from "react-router-dom";
-import { ContainerInput, Button } from "./styled";
-import { adress } from "../../services/Requests";
-import { goToSingUp } from "../../routes/coordinator";
-import back from "../../assets/back.png"
-
-const Adress = () =>{
+import { UpDateAdress } from "../../../services/Requests";
+const EditAddress = () =>{
     const navigate = useNavigate()
-    const {form, onChange, clearFields} = UseForm(
-      {
+    const {form, onChange, clearFields} = UseForm({
         street: "",
         number: "",
         neighbourhood: "",
         city: "",
         state: "",
         complement: ""
-      }
-      )
-      const submit = (event) =>{
+    })
+    const submit = (event) =>{
         event.preventDefault()
-        adress(form, clearFields, navigate)
+        UpDateAdress(form, clearFields, navigate)
+        console.log(form)
         clearFields()
       }
-    return (  
+    return(
         <ContainerInput>
         <h3 className="address">
-        <img onClick={()=> goToSingUp(navigate)} src={back} alt={"back"}/>
-        </h3>
+        <img onClick={()=> goToProfile(navigate)} src={back} alt={"back"}/>
+          Endereço</h3>
         <form onSubmit={submit}>
-
-        <p>Meu endereço</p>
-        <TextField
+         <TextField
         name={"street"}
-        placeholder="Rua/Av."
+        placeholder="Rua"
         value={form.street}
-        label={"Logradouro"}
+        label={"Rua"}
         type={"text"}
         required
         onChange={onChange}
         />
        <TextField
        name={"number"}
-       placeholder="Apto./Bloco"
+       placeholder="Número"
        value={form.number}
        label={"Número"}
        required
-       onChange={onChange}
-       />
-       <TextField
-       name={"complement"}
-       placeholder="Complemento"
-       value={form.complement}
-       label={"Complemento"}
-       variant="outlined"
-       
-       type={"text"}
        onChange={onChange}
        />
        <TextField
@@ -88,10 +74,20 @@ const Adress = () =>{
        required
        onChange={onChange}
        />
+       <TextField
+       name={"complement"}
+       placeholder="Complemento"
+       value={form.complement}
+       label={"Complemento"}
+       variant="outlined"
+       
+       type={"text"}
+       onChange={onChange}
+       />
        <Button variant="contained" color={"primary"} type="submit">Salvar</Button>
        </form>
        </ContainerInput> 
     )
-    
 }
-export default Adress   
+
+export default EditAddress

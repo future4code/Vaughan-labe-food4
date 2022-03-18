@@ -1,6 +1,6 @@
 import React from "react";
 import CardFeed from "./CardFeed/CardFeed";
-import {Title, ContainerSearch} from "./styled"
+import {Title, ContainerSearch, Container} from "./styled"
 import Box from '@mui/material/Box'
 import OutlinedInput from '@mui/material/OutlinedInput'
 import InputAdornment from '@mui/material/InputAdornment'
@@ -10,16 +10,22 @@ import Divider from '@mui/material/Divider';
 import NavBarHome from "../../components/NavBar/NarBarHome";
 import { goToSearch } from "../../routes/coordinator";
 import  {useNavigate} from "react-router-dom";
+import Filter from "./Filter/Filter";
+
+
 
 const FeedPage = () => {
    const navigate = useNavigate()
 
+  
+
   return (
     <div>
+    
+    <Container>
       <Title>
       <h2>FutureEats</h2>
       </Title>
-
       <Box sx={{ display: 'flex', justifyContent: 'center' }}>
       <Divider />
         <ContainerSearch>
@@ -36,8 +42,13 @@ const FeedPage = () => {
           </FormControl>
         </ContainerSearch>
       </Box>
+      
+     <Filter/>
+
       <CardFeed/>
       <NavBarHome/>
+    </Container>
+    
     </div>
   )
 }

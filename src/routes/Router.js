@@ -5,6 +5,8 @@ import CarPage from "../pages/CarPage/CarPage";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import FeedPage from "../pages/FeedPage/FeedPage";
 import LoginPage from "../pages/LoginPage/LoginPage";
+import EditAddress from "../pages/ProfilePage/EditProfile/EditAddress";
+import EditProfile from "../pages/ProfilePage/EditProfile/EditProfile";
 import ProfilePage from "../pages/ProfilePage/ProfilePage";
 import RestaurantPage from "../pages/RestaurantPage/RestaurantPage";
 import SearchPage from "../pages/SearchPage/SearchPage";
@@ -26,6 +28,8 @@ export const Router = () => {
         <Route path="/restaurant/:id" element={<RestaurantPage/>}/>
         <Route path="/search" element={<SearchPage/>}/>
         <Route path="/profile" element={<ProfilePage/>}/>
+        <Route path="/profile/editProfile" element={<EditProfile/>}/>
+        <Route path="/profile/editAddress" element={<EditAddress/>}/>
         <Route path="/car" element={<CarPage/>}/>
         <Route path="*" element={<ErrorPage/>}/>
         

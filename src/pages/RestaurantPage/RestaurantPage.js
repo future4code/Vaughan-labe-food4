@@ -1,13 +1,18 @@
 import React from "react"
+import CardFood from "../../components/CardFood/CardFood"
 import CardRestaurant from "./CardRestaurant/CardRestaurant"
+import { Container, ContainerFoods } from './styled'
 
 
 const RestaurantePage = () => {
 
   return (
-    <div>
+    <Container>
       <CardRestaurant />
-    </div>
+      <ContainerFoods>
+        <CardFood />
+      </ContainerFoods>
+    </Container>
   )
 }
 
