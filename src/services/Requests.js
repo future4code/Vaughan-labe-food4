@@ -47,6 +47,24 @@ export const adress = (body, clear, navigate) =>{
   })
 }
 
+export const editProfile = (body, clear, navigate) => {
+  const axiosConfig = {
+    headers:{
+      auth: window.localStorage.getItem("token")
+    }
+  }
+  axios.put(`${BASE_URL}/profile`, body, axiosConfig
+     ).then((response) => {
+          console.log("te amo",response.data)
+          clear()
+          goToProfile(navigate)
+      })
+      .catch((error) => {
+          console.log(error.response)
+      })
+
+}
+
 export const UpDateAdress = (body, clear, navigate) =>{
   const axiosConfig = {
     headers:{

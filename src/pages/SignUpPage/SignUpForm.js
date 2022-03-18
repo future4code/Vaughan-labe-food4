@@ -79,7 +79,7 @@ const SignUpForm = () => {
       name={"confirmation"}
       placeholder="Confirmarmação"
       value={form.confirmation}
-      label={"Confirmarmação"}
+      label={"Confirmar"}
       variant="outlined"
       margin="normal"
       type={"password"}
