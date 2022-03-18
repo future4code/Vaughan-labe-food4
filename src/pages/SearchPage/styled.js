@@ -4,8 +4,8 @@ import { Box } from '@mui/material'
 export const Title = styled.div`
     display: flex;
     padding: 10px;
-    justify-content:space-evenly;
-    align-items: stretch
+    justify-content: flex-start;
+    align-items: stretch;
     width: 100%;
     border-bottom: 1px solid #c4c4c4;
     margin-bottom: 1px;
@@ -39,4 +39,9 @@ export const ContainerSearch = styled.div`
 @media screen and (max-width: 321px){ 
    width: 300px;
 }
+`
+
+export const H2 = styled.h2`
+    display: flex;
+    padding-left: 100px;
 `
