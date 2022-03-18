@@ -8,6 +8,7 @@ const GlobalState = (props) => {
     const [restaurants, setRestaurants, loading] = useRequestData([], `${BASE_URL}/restaurants`)
     const [cart, setCart] = useState([])
     const [cartRest, setCartRest] = useState([])
+    const [buttonCard, setButtonCard] = useState()
 
     const removeTheFood = (food) => {
         const filterFood = cart.filter((f)=> f.id !== food.id)
@@ -17,11 +18,13 @@ const GlobalState = (props) => {
         cart,
         setCart,
         restaurants,
+        setRestaurants,
         loading,
         removeTheFood,
         cartRest,
         setCartRest,
-        setRestaurants
+        buttonCard,
+        setButtonCard
     }
     
     return(
