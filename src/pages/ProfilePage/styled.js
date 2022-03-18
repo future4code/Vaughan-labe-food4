@@ -11,7 +11,7 @@ height: 100%;
     border-bottom: 1px solid #dfdfdf;
     width: 100%;
     height: 40px;
-    
+    font-size: 16px;
 }
 .edit{
     margin-right: 20px;
@@ -98,9 +98,10 @@ export const ContainerMapHistory = styled.div`
     background-color: white;
     width: 100%;
     h3{
+    font-size: 16px;
     border-bottom: 1px solid #000000;
     width: 328px;
-      
+    margin: 13px 0px 0px;
     }
 `
 
@@ -109,8 +110,8 @@ export const ContainerHistory = styled.div`
     justify-content: flex-start;
     flex-direction: column;
     background-color: white;
-    width: 328px;
-    height: 122px;
+    width: 90%;
+    height: 112px;
     border-radius: 8px;
     border: solid 1px #b8b8b8;
     
@@ -122,6 +123,11 @@ export const ContainerHistory = styled.div`
     .p2History{
         font-weight: 600;
         font-size: 12px;
+        color: black;
+    }
+    .p3History{
+        font-weight: bold;
+        font-size: 16px;
         color: black;
     }
     
