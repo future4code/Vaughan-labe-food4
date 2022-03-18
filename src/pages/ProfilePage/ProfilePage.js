@@ -14,7 +14,7 @@ const ProfilePage = () => {
   useEffect(() => {
 
   }, [historyOrden])
-  
+  console.log(historyOrden)
   return (
     <ContainerProfile>
       <h3 className="myUpDateProfile">Meu Perfil</h3>
@@ -33,7 +33,7 @@ const ProfilePage = () => {
           )
         })}
         <ContainerAddress>
-          <p>Endereço <img onClick={()=> goToEditAddress(navigate)} src={edit} alt={"back"}/></p>
+          <p>Endereço <img onClick={()=> goToEditAddress(navigate)} src={edit} alt={"back"} className="edit"/></p>
           <p>{getProfile && getProfile[0]?.user?.address} </p>
         </ContainerAddress>
       </ContainerInfoProfile>

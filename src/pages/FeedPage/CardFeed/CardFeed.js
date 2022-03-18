@@ -4,6 +4,7 @@ import { LoadingStyle, InfoRestaurant, ContainerCard } from '../styled'
 import { useNavigate } from 'react-router-dom'
 import { goToRestaurant } from '../../../routes/coordinator'
 import GlobalStateContext from '../../../global/GlobalStateContext'
+import ActiveOrder from '../../../components/ActiveOrder/ActiveOrder'
 
 const CardFeed = () => {
     const {restaurants, loading, setCartRest} = useContext (GlobalStateContext)
@@ -54,7 +55,7 @@ const CardFeed = () => {
 
     return (
        <div>
-       {loading ? <LoadingStyle></LoadingStyle> : restaurantList}
+       {loading ? <LoadingStyle></LoadingStyle> : <div>{restaurantList} <ActiveOrder /></div> }
       </div> 
     )
 }
