@@ -10,6 +10,9 @@ import Divider from '@mui/material/Divider';
 import NavBarHome from "../../components/NavBar/NarBarHome";
 import { goToSearch } from "../../routes/coordinator";
 import  {useNavigate} from "react-router-dom";
+import Filter from "./Filter/Filter";
+
+
 
 const FeedPage = () => {
    const navigate = useNavigate()
@@ -39,9 +42,9 @@ const FeedPage = () => {
           </FormControl>
         </ContainerSearch>
       </Box>
-      <div>
-       <h2>Hamburguer  Pasteis</h2>
-      </div>
+      
+     <Filter/>
+
       <CardFeed/>
       <NavBarHome/>
     </Container>
