@@ -16,9 +16,7 @@ import Filter from "./Filter/Filter";
 
 const FeedPage = () => {
    const navigate = useNavigate()
-
-  
-
+   
   return (
     <div>
     
@@ -42,8 +40,6 @@ const FeedPage = () => {
           </FormControl>
         </ContainerSearch>
       </Box>
-      
-     <Filter/>
 
       <CardFeed/>
       <NavBarHome/>

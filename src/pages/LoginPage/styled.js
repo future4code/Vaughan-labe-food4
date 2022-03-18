@@ -34,6 +34,9 @@ export const ButtonSignUpStyle = styled.button`
     background-color: transparent;
     border: none;
     margin-top: 65px;
+@media screen and (max-width: 321px){ 
+    margin-top: 90px;
+}
 `
 export const ContainerField = styled.div`
     display: flex;
@@ -47,7 +50,7 @@ export const Button = styled.button`
     border: none;
     border-radius: 4px;
     height: 42px;
-    width: 340px;
+    width: 100%;
 :hover{
     background-color: #A2E884;
 }

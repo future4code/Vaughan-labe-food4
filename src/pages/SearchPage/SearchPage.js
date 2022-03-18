@@ -94,6 +94,7 @@ return (
             onChange={onChangeInput}
           />
         </FormControl>
+        
         {restaurantFilter}
       </div>
     </Box>

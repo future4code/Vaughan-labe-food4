@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 export const ContainerInput = styled.div`
   display: grid;
   justify-content: center;
@@ -36,7 +37,7 @@ export const Button = styled.button`
     border: none;
     border-radius: 4px;
     height: 42px;
-    width: 340px;
+    width: 100%;
 :hover{
     background-color: #A2E884;
 }
