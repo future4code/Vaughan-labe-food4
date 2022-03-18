@@ -1,11 +1,10 @@
-import {  FormGroup, FormControlLabel } from "@mui/material";
+import { FormControlLabel } from "@mui/material";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { confirmPurchase } from "../../../services/Requests";
 import { ContainerForm, ButtonStyle, FormPayment } from "./styled";
 import PanoramaFishEyeIcon from '@mui/icons-material/PanoramaFishEye';
 import RadioButtonCheckedIcon from '@mui/icons-material/RadioButtonChecked';
-
 
 
 const Payments = ({ cart, resId }) => {

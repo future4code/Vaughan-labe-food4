@@ -12,6 +12,8 @@ export const ContainerInput = styled.div`
         height: 30vh;
     }
     p{
+        font-family: 'Roboto', sans-serif;
+        font-weight: 550;
         font-size: 16px;
         text-align: center;
     }
@@ -31,6 +33,8 @@ export const ContairnerImg = styled.div`
 `
 export const ButtonSignUpStyle = styled.button`
     font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 550;
     background-color: transparent;
     border: none;
     margin-top: 65px;
@@ -45,7 +49,8 @@ export const ContainerField = styled.div`
 `
 export const Button = styled.button`
     font-size: 16px;
-    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 550;
     background-color: #5cb646;
     border: none;
     border-radius: 4px;

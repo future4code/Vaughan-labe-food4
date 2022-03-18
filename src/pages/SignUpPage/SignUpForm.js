@@ -35,9 +35,6 @@ const SignUpForm = () => {
 
   return (
     <ContainerInput>
-      <h3 className="address">
-        <BackImg onClick={() => goToLogin(navigate)} src={back} alt={"back"} />
-      </h3>
 
       <ContairnerImg>
         <LogoImg src={logo} alt={"Logo"} />
@@ -105,10 +102,10 @@ const SignUpForm = () => {
             placeholder="Confirmar a senha anterior"
             value={form.confirmation}
             label={"Confirmar"}
+            type={showPassword ? "text" : "password"}
             inputProps={{ pattern: '^.{6,}', title: "A senha deve conter no mínimo 6 caracteres!" }}
             InputLabelProps={{shrink: true,}}
             variant="outlined"
-            type={showPassword ? "text" : "password"}
             required
             fullWidth
             onChange={onChange}

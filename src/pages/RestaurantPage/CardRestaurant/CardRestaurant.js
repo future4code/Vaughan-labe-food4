@@ -8,7 +8,7 @@ const CardRestaurant = () => {
     
     const params = useParams()
     const { restaurants, loading } = useContext(GlobalStateContext)
-
+    
     useEffect(() => {
 
     }, [restaurants])
