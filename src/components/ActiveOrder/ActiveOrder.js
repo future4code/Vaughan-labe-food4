@@ -6,7 +6,7 @@ import { ContainerOrder } from './styled';
 
 const ActiveOrder = () => {
     const [order] = useRequestData([], `${BASE_URL}/active-order`)
-    console.log(order)
+    
     return (
         <>
             {order?.order === undefined || order?.order === null? "" :
