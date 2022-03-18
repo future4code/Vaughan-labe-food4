@@ -82,15 +82,26 @@ export const DivInfo = styled.div`
 `
 export const ConainerBottom = styled.div`
   margin-left: 20px;
-.popup{
+  
+.popup-wrapper{
+  background: rgba(0,0,0,.5);
   position: fixed;
-  top: 50%;
-  left: 20px;
-  width: 328px;
-  background-color: #fff;
-  height: 30vh;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   display: none;
+  .popup{
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+    margin: 10% auto;
+    padding: 20px;
+    background: #fff;
+    position: relative;
 }
+}
+
 `
 export const StyleSelect = styled.select`
   border: 1px solid #c5c5c5;
