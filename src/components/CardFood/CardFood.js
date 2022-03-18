@@ -14,13 +14,15 @@ const CardFood = () => {
     const { loading } = useContext(GlobalStateContext)
     const [foods] = useRequestData([], `${BASE_URL}/restaurants/${params.id}`)
     
+
+
     const openQuantity = (food) => {
-        document.getElementById(`popup`).style.display = `block`
+        document.querySelector(`.popup-wrapper`).style.display = `block`
         setFood(food)
     }
 
     const exitQuantify = () => {
-        document.getElementById(`popup`).style.display = `none`
+        document.querySelector(`.popup-wrapper`).style.display = `none`
     }
     const addToCart = () => {
         const quantity = Number(amount)
@@ -73,12 +75,11 @@ const CardFood = () => {
                                             <Description>{food.description}</Description>
                                         </div>
 
-                                        
+                                        <div className="popup-wrapper">
                                         <div id="popup" className="popup">
                                         <ContainerPopup>
                                             <TitlePopup>Selecione a quantidade desejada</TitlePopup>
                                             <StyleSelect onChange={onChange}>
-                                                <option>0</option>
                                                 <option>1</option>
                                                 <option>2</option>
                                                 <option>3</option>
@@ -95,6 +96,8 @@ const CardFood = () => {
                                             </DivButtonPopup>
                                             </ContainerPopup>
                                         </div>
+                                        </div>
+                                       
 
                                         <div>
                                             <div>
