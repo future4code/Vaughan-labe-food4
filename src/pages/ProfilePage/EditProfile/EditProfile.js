@@ -6,6 +6,7 @@ import { goToProfile } from "../../../routes/coordinator";
 import { useNavigate } from "react-router-dom";
 import back from "../../../assets/back.png"
 import UseForm from "../../../hooks/useForm";
+import { editProfile } from "../../../services/Requests";
 export const EditProfile = () => {
     const {form, onChange, clearFields} = UseForm({
         name: "",
@@ -15,10 +16,8 @@ export const EditProfile = () => {
     const navigate = useNavigate()
     const submit = (event) => {
         event.preventDefault()
-        console.log(form)
         clearFields()
-        EditProfile(form, clearFields, navigate)
-        
+        editProfile(form, clearFields, navigate)
     }
     
     return (

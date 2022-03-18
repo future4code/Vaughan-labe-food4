@@ -2,7 +2,8 @@ import React, { useEffect } from "react";
 import NavBarProfile from "../../components/NavBar/NavBarPorfile";
 import useRequestData from "../../hooks/useRequestData"
 import { BASE_URL } from "../../constants/url"
-import { ContainerProfile, ContainerInfoProfile, ContainerImgProfile, ContainerMap, ContainerAddress } from "./styled";
+import { ContainerProfile, ContainerInfoProfile, ContainerImgProfile, ContainerMap, 
+  ContainerAddress, ContainerHistory, ContainerMapHistory } from "./styled";
 import edit from "../../assets/edit@2x.png"
 import { useNavigate } from "react-router-dom";
 import {  goToEditAddress, goToEditLogin } from "../../routes/coordinator";
@@ -28,29 +29,34 @@ const ProfilePage = () => {
         {getProfile && getProfile?.map((profile) => {
           return (
             <ContainerMap>
-              <p>{profile.user?.name} </p>
-              <p>{profile.user?.email}</p>
+              <p className="p1">{profile.user?.name} </p>
+              <p className="p2"> {profile.user?.email}</p>
+              <p className="p3">{profile.user?.cpf}</p>
             </ContainerMap>
           )
         })}
         <ContainerAddress>
           <p>Endereço <img onClick={()=> goToEditAddress(navigate)} src={edit} alt={"back"} className="edit"/></p>
-          <p>{getProfile && getProfile[0]?.user?.address} </p>
-          <>
-          <h2>Historico De pedido</h2>
+          <h2>{getProfile && getProfile[0]?.user?.address} </h2>
+          <ContainerMapHistory>
+            
+          <h3>Historico De pedido</h3>
+          
           {historyOrden[0]?.length < 0 ? "" :
            <>{historyOrden && historyOrden[0]?.orders?.map((history)=>{
+            let price = history.totalPrice.toFixed(2)
             let date = new Date(history.createdAt) 
             return(
-            <>
-            <h2>{history.restaurantName}</h2>
-            
-             <p>Data:{date.toLocaleString()}</p> 
-            
-            <h2>{history.totalPrice}</h2>
-            </>
+            <ContainerHistory>
+            <p className="p1History">{history.restaurantName}</p>
+             <p className="p2History">
+               {date.toLocaleString()}
+             </p> 
+          
+            <p className="p3History">SUBTOTAL R${price}</p>
+            </ContainerHistory>
            )})}</>}
-          </>
+          </ContainerMapHistory>
         </ContainerAddress>
         
       </ContainerInfoProfile>
