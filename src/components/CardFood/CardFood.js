@@ -14,19 +14,18 @@ const CardFood = () => {
     const [foods] = useRequestData([], `${BASE_URL}/restaurants/${params.id}`)
     
 
-    const addRemove = () => {
-        const newProductCart = [...cart]
-        const findIndex = newProductCart.findIndex((product)=>{
-            return product.id === food.id
-        })
-        if(findIndex === -1){
-            setButtonCard("adicionar")
-        }else{
-            setButtonCard("remover")
-        }
-        console.log(findIndex)
-
-    }
+    // const addRemove = () => {
+    //     const newProductCart = [...cart]
+    //     const findIndex = newProductCart.findIndex((product)=>{
+    //         return product.id === food.id
+    //     })
+    //     if(findIndex === -1){
+    //         setButtonCard("adicionar")
+    //     }else{
+    //         setButtonCard("remover")
+    //     }
+    //     console.log(findIndex)
+    // }
 
     const openQuantity = (food) => {
         document.querySelector(`.popup-wrapper`).style.display = `block`
