@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import {ContainerSearch, ContainerCard, InfoRestaurant, Title} from "./styled"
+import {HeaderContainer, ContainerCard, InfoRestaurant, Title, H2} from "./styled"
 import Box from '@mui/material/Box'
 import OutlinedInput from '@mui/material/OutlinedInput'
 import InputAdornment from '@mui/material/InputAdornment'
@@ -10,6 +10,7 @@ import { Button, Card, CardActionArea, CardContent, CardMedia, Typography } from
 import { useNavigate } from "react-router-dom";
 import { goToFeed, goToRestaurant } from "../../routes/coordinator";
 import GlobalStateContext from "../../global/GlobalStateContext";
+import back from "../../assets/back.png"
 
 const SearchPage = () => {
   const {restaurants,setCartRest} = useContext(GlobalStateContext)
@@ -72,9 +73,9 @@ const SearchPage = () => {
           onClick={() => goToFeed(navigate)}
           variant="text" margin={"normal"} color={"inherit"}
         >
-          Voltar
+          <img src={back} alt={"Back"}/>
         </Button>
-        <h2>Busca</h2>
+        <H2>Busca</H2>
       </Title>
 
       <Box sx={{ display: 'flex', justifyContent: 'center' }}>
@@ -95,7 +96,7 @@ const SearchPage = () => {
           </FormControl>
           {restaurantFilter}
         </div>
-      </Box>
+      </Box> 
     </div>
   )
 }
