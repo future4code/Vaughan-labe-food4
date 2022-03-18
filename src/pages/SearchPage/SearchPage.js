@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import {ContainerSearch, ContainerCard, InfoRestaurant, Title} from "./styled"
+import {HeaderContainer, ContainerCard, InfoRestaurant, Title, H2} from "./styled"
 import Box from '@mui/material/Box'
 import OutlinedInput from '@mui/material/OutlinedInput'
 import InputAdornment from '@mui/material/InputAdornment'
@@ -10,58 +10,60 @@ import { Button, Card, CardActionArea, CardContent, CardMedia, Typography } from
 import { useNavigate } from "react-router-dom";
 import { goToFeed, goToRestaurant } from "../../routes/coordinator";
 import GlobalStateContext from "../../global/GlobalStateContext";
+import back from "../../assets/back.png"
 
 const SearchPage = () => {
-  const {restaurants,setCartRest} = useContext(GlobalStateContext)
+  const { restaurants, setCartRest } = useContext(GlobalStateContext)
   const [input, setInput] = useState("");
-    const Navigate = useNavigate()
+  const Navigate = useNavigate()
 
-   useEffect(()=>{
-   },[restaurants])
-   
-    const onClickInfoRestaurant = (id) => {
-        goToRestaurant (Navigate, id)
-        setCartRest(id)
-    }
+  useEffect(() => {
+  }, [restaurants])
+
+  const onClickInfoRestaurant = (id) => {
+    goToRestaurant(Navigate, id)
+    setCartRest(id)
+  }
 
   const onChangeInput = (event) => {
     setInput(event.target.value);
   };
   const restaurantFilter = restaurants.restaurants?.filter((restaurant) => {
     return !input
-      ?false
-      : restaurant?.name.toLowerCase().includes(input.toLowerCase())  
+      ? false
+      : restaurant?.name.toLowerCase().includes(input.toLowerCase())
   })
+
   .map((restaurant) => {
-      return <ContainerCard key={restaurant.id}>
+    return <ContainerCard key={restaurant.id}>
 
-      <Card sx={{display: "flex", justifyContent: "center", borderRadius: 3, border: 1, borderColor: '#c4c4c4', width: 378}}>
+      <Card sx={{ display: "flex", justifyContent: "center", borderRadius: 3, border: 1, borderColor: '#c4c4c4', width: 378 }}>
 
-          <CardActionArea onClick={() => onClickInfoRestaurant(restaurant.id)}>
-              <CardMedia
-                  component="img"
-                  height="100"
-                  image={restaurant.logoUrl}
-                  alt= {restaurant.name}
-              />
-              <CardContent>
-                  <Typography gutterBottom variant="h6" color="primary" component="div">
-                      {restaurant.name}
-                  </Typography>
-                  <InfoRestaurant>
-                      <Typography variant="body1" color="text.secondary">
-                          {restaurant.deliveryTime} min
-                      </Typography>
-                      <Typography variant="body1" color="text.secondary">
-                            Frete: R${restaurant.shipping},00
-                      </Typography>
-                  </InfoRestaurant>
-              </CardContent>
-          </CardActionArea>
+        <CardActionArea onClick={() => onClickInfoRestaurant(restaurant.id)}>
+          <CardMedia
+            component="img"
+            height="100"
+            image={restaurant.logoUrl}
+            alt={restaurant.name}
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h6" color="primary" component="div">
+              {restaurant.name}
+            </Typography>
+            <InfoRestaurant>
+              <Typography variant="body1" color="text.secondary">
+                {restaurant.deliveryTime} min
+              </Typography>
+              <Typography variant="body1" color="text.secondary">
+                Frete: R${restaurant.shipping},00
+              </Typography>
+            </InfoRestaurant>
+          </CardContent>
+        </CardActionArea>
 
       </Card>
-      
-  </ContainerCard>
+
+    </ContainerCard>
   })
 
   const navigate = useNavigate()
@@ -72,16 +74,16 @@ const SearchPage = () => {
           onClick={() => goToFeed(navigate)}
           variant="text" margin={"normal"} color={"inherit"}
         >
-          Voltar
+          <img src={back} alt={"Back"}/>
         </Button>
-        <h2>Busca</h2>
+        <H2>Busca</H2>
       </Title>
 
-      <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+    <Box sx={{ display: 'flex', justifyContent: 'center' }}>
       <Divider />
-        <div>
-          <FormControl sx={{ m: 1, width: '40ch' }} variant="outlined" >
-            <OutlinedInput
+      <div>
+        <FormControl sx={{ m: 1, width: '40ch' }} variant="outlined" >
+          <OutlinedInput
 
               type={'text'}
               startAdornment={
@@ -95,7 +97,7 @@ const SearchPage = () => {
           </FormControl>
           {restaurantFilter}
         </div>
-      </Box>
+      </Box> 
     </div>
   )
 }
