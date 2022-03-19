@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import GlobalStateContext from '../../../global/GlobalStateContext'
 import { Card, CardContent, CardMedia, Typography} from "@mui/material"
-import { InfoRestaurant, LoadingStyle, ContainerCard } from './styled'
+import { InfoRestaurant, LoadingStyle, ContainerCard, CardInfos } from './styled'
 
 const CardRestaurant = () => {
     
@@ -36,23 +36,25 @@ const CardRestaurant = () => {
                                 {rest.name}
                             </Typography>
 
+                            <CardInfos>
                             <Typography gutterBottom variant="body2" color="text.secondary">
                                 {rest.category}
                             </Typography>
 
                             <InfoRestaurant>
                                 <Typography variant="body2" color="text.secondary">
-                                    {rest.deliveryTime} min
+                                {rest.deliveryTime - 10} - {rest.deliveryTime} min
                                 </Typography>
 
                                 <Typography variant="body2" color="text.secondary">
                                     Frete: R${rest.shipping},00
                                 </Typography>
                             </InfoRestaurant>
-                            <br />
+
                             <Typography gutterBottom variant="body2" color="text.secondary">
                                 {rest.address}
                             </Typography>
+                            </CardInfos>
 
                         </CardContent>
 

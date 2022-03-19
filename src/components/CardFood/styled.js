@@ -1,31 +1,6 @@
 import styled from 'styled-components'
 import { Box, CardMedia } from '@mui/material'
 
-export const InfoRestaurant = styled(Box)`
-  display: flex;
-  justify-content: space-between;
-  
-`
-export const BoxBotton = styled(Box)`
-display: flex;
-justify-content: space-between;
-
-
-`
-export const StyleButton = styled.button`
-font-size: 13px;
-border-color: #6AC453;
-color: #6AC453;
-background: white;
-border-radius: 8px 0px 0px 0px;
-:hover{
-  background-color: #E2FFD5;
-}
-`
-export const CardMediaStyle = styled(CardMedia)`
-    margin-right: -50px;
-
-`
 export const LoadingStyle = styled.div`
     position: absolute;
     top: 40vh;
@@ -94,16 +69,31 @@ export const ConainerBottom = styled.div`
   height: 100%;
   display: none;
   .popup{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 550;
+    margin-top: 13.125rem;
+    margin-left: 1.125rem;
     text-align: center;
     width: 100%;
     max-width: 300px;
-    margin: 10% auto;
     padding: 20px;
     background: #fff;
     position: relative;
+@media screen and (min-width: 414px){
+  margin-top:14.5rem;
+  right: -19px;
+}
+@media screen and (max-width: 360px){
+  margin-top:17rem;
+  left: -8.5px;
+}
+@media screen and (max-width: 321px){
+  width: 100%;
+  max-width: 270px;
+  left: -13.5px;
 }
 }
-
+}
 `
 export const StyleSelect = styled.select`
   border: 1px solid #c5c5c5;
@@ -121,6 +111,8 @@ export const ContainerPopup = styled.div`
 `
 export const ButtonPopup = styled.a`
   color: #5cb646;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 550;
   font-size: 16px;
   text-transform: uppercase;
 `
@@ -146,3 +138,119 @@ export const NameFood = styled.p`
 export const PriceFood = styled.p`
   font-size: 17px;
 `
+
+export const CardProductContainer = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border: 1px solid #b8b8b8;
+    border-radius: 10px;
+    position: relative;
+    margin-bottom: 10px;
+
+    img {
+        width: 96px;
+        height: 112px;
+        border-radius: 8px 0px 0px 8px;
+        object-fit: cover;
+    }
+  .popup-wrapper{
+  background: rgba(0,0,0,.5);
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  .popup{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 550;
+    margin-top: 13.125rem;
+    margin-left: 1.125rem;
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+    padding: 20px;
+    background: #fff;
+    position: relative;
+@media screen and (min-width: 414px){
+  margin-top:14.5rem;
+  right: -19px;
+}
+@media screen and (max-width: 360px){
+  margin-top:17rem;
+  left: -8.5px;
+}
+@media screen and (max-width: 321px){
+  width: 100%;
+  max-width: 270px;
+  left: -13.5px;
+}
+}
+}
+`
+
+export const InfosContainer = styled.div`
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 112px;
+    margin-left: 12px;
+`
+
+export const TitleInfo = styled.span`
+    color: #5cb646;
+`
+
+export const DescInfo = styled.span`
+    color: #b8b8b8;
+    font-size: 12px;
+    margin: 5px 0px 8px;
+    height: 30px;
+`
+export const DescPrice = styled.span`
+    color: black;
+    font-size: 17px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 550;
+`
+
+export const ButtonCart = styled.button`
+    border: 1px solid #6CC247;
+    color: green;
+    background-color: transparent;
+    height: 31px;
+    width: 90px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-radius: 9px 0px;
+    cursor: pointer;
+`
+
+export const AmountCart = styled.span`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #6CC247;
+    color: black;
+    background-color: transparent;
+    height: 33px;
+    width: 33px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 0px 9px;
+    cursor: pointer;
+`
+export const DialogTitle = styled.span`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 58px;
+    width: 82vw;
+    margin-top: 20px;
+`
+

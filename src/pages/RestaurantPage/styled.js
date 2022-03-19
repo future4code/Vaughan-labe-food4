@@ -22,9 +22,10 @@ export const PageTittleContainer = styled.div`
     justify-content: center;
     align-items: flex-end;
     z-index: 1;
-
 `
 export const TittleNavContainer = styled.div`
+    font-family: 'Roboto', sans-serif;
+    font-weight: 550;
     width: 360px;
     height: 44px;
     display: flex;

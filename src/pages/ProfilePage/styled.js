@@ -8,7 +8,8 @@ height: 100%;
 .myUpDateProfile{
     display: flex;
     justify-content: center;
-    border-bottom: 1px solid #dfdfdf;
+    box-shadow: 0 0.5px 0 0 rgba(0, 0, 0, 0.25);
+    background-color: #FFF;
     width: 100%;
     height: 40px;
     font-size: 16px;
@@ -132,24 +133,24 @@ export const ContainerHistory = styled.div`
     }
     
 `
-export const PageTittleContainer = styled.div`
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 64px;
-    box-shadow: 0 0.5px 0 0 rgba(0, 0, 0, 0.25);
-    background-color: #FFF;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    z-index: 1;
-`
-export const TittleNavContainer = styled.div`
-    width: 360px;
-    height: 44px;
-    font-size: 16px;
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-`
+// export const PageTittleContainer = styled.div`
+//     position: fixed;
+//     top: 0;
+//     width: 100%;
+//     height: 64px;
+//     box-shadow: 0 0.5px 0 0 rgba(0, 0, 0, 0.25);
+//     background-color: #FFF;
+//     display: flex;
+//     justify-content: center;
+//     align-items: flex-end;
+//     z-index: 1;
+// `
+// export const TittleNavContainer = styled.div`
+//     width: 360px;
+//     height: 44px;
+//     font-size: 16px;
+//     display: flex;
+//     text-align: center;
+//     align-items: center;
+//     justify-content: center;
+// `

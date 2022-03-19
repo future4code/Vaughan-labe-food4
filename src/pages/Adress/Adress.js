@@ -1,6 +1,6 @@
-import React from "react"
+import React, { useState } from "react"
 import Back from '../../assets/back.png'
-import { TextField } from "@mui/material";
+import { CircularProgress, TextField } from "@mui/material";
 import UseForm from "../../hooks/useForm";
 import { useNavigate } from "react-router-dom";
 import { ContainerInput, Button, PageTittleContainer, TittleNavContainer, BackImg } from "./styled";
@@ -10,6 +10,7 @@ import back from "../../assets/back.png"
 
 const Adress = () => {
   const navigate = useNavigate()
+  const [isLoading, setIsLoading] = useState(false)
   const { form, onChange, clearFields } = UseForm({
     street: "",
     number: "",
@@ -20,7 +21,7 @@ const Adress = () => {
   })
   const submit = (event) => {
     event.preventDefault()
-    adress(form, clearFields, navigate)
+    adress(form, clearFields, navigate, setIsLoading)
     console.log(form)
     clearFields()
   }
@@ -49,6 +50,7 @@ const Adress = () => {
           />
           <TextField
             name={"number"}
+            type={"number"}
             placeholder="Número"
             value={form.number}
             label={"Número"}
@@ -61,7 +63,6 @@ const Adress = () => {
             value={form.complement}
             label={"Complemento"}
             variant="outlined"
-
             type={"text"}
             onChange={onChange}
           />
@@ -70,6 +71,7 @@ const Adress = () => {
             placeholder="Bairro"
             value={form.neighbourhood}
             label={"Bairro"}
+            type={"text"}
             required
             onChange={onChange}
           />
@@ -89,12 +91,11 @@ const Adress = () => {
             value={form.state}
             label={"Estado"}
             variant="outlined"
-
             type={"text"}
             required
             onChange={onChange}
           />
-          <Button variant="contained" color={"primary"} type="submit">Salvar</Button>
+          <Button variant="contained" color={"primary"} type="submit">{ isLoading ? <CircularProgress color="inherit" size={24}/> : <>Salvar</>}</Button>
         </form>
       </ContainerInput>
     </div>

@@ -3,8 +3,9 @@ import { useParams } from "react-router-dom"
 import useRequestData from "../../hooks/useRequestData"
 import { BASE_URL } from "../../constants/url"
 import GlobalStateContext from '../../global/GlobalStateContext'
-import { DivContainer, StyleSelect, ButtonPopup, PriceFood, NameFood,
- Description, ConainerBottom, TitlePopup, ContainerPopup,  DivButtonPopup, DivInfo, ImgStyle, Button, LoadingStyle, TitleCategory } from './styled'
+import {
+    StyleSelect, ButtonPopup, TitlePopup, ContainerPopup, DivButtonPopup,  LoadingStyle, TitleCategory,
+CardProductContainer, InfosContainer,  TitleInfo, DescInfo, DescPrice, ButtonCart} from './styled'
 
 const CardFood = () => {
     const [amount, setAmount] = useState(0)
@@ -12,7 +13,7 @@ const CardFood = () => {
     const { cart, setCart, loading, buttonCard, setButtonCard } = useContext(GlobalStateContext)
     const params = useParams()
     const [foods] = useRequestData([], `${BASE_URL}/restaurants/${params.id}`)
-    
+
 
     // const addRemove = () => {
     //     const newProductCart = [...cart]
@@ -35,7 +36,6 @@ const CardFood = () => {
         document.querySelector(`.popup-wrapper`).style.display = `none`
     }
 
-
     const addToCart = () => {
         const quantity = Number(amount)
         const newCart = [...cart]
@@ -50,7 +50,7 @@ const CardFood = () => {
         setCart(newCart)
         exitQuantify()
     }
-    
+
     const onChange = (e) => {
         setAmount(e.target.value)
     }
@@ -60,7 +60,7 @@ const CardFood = () => {
     })
 
     const onlyCategories = [...new Set(listOfCategories)]
-    
+
     const divisionCategories = onlyCategories && onlyCategories.map((type) => {
         return (
             <div key={type}>
@@ -69,25 +69,23 @@ const CardFood = () => {
                     return cat.category === type
                 })
                     .map((food) => {
-                        
+
                         return (
-                            <DivContainer key={food.id}>
+                            <CardProductContainer key={food.id}>
+                                <img src={food.photoUrl} alt={food.name} />
+                                <InfosContainer>
+                                    <TitleInfo>{food.name}</TitleInfo>
+                                    <DescInfo>{food.description}</DescInfo>
+                                    <DescPrice>R$ {food.price} </DescPrice>
+                                </InfosContainer>
+                                {food.quantify}
 
-                                <DivInfo>
-
-                                    <div>
-                                        <ImgStyle src={food?.photoUrl} alt={food.name} />
-                                    </div>
-
-                                    <ConainerBottom>
-
-                                        <div>
-                                            <NameFood>{food.name}</NameFood>
-                                            <Description>{food.description}</Description>
-                                        </div>
-
-                                        <div className="popup-wrapper">
-                                        <div id="popup" className="popup">
+                                <>
+                                    <ButtonCart color={"green"} onClick={() => openQuantity(food)}>adicionar</ButtonCart>
+                                </>
+                                
+                                <div className="popup-wrapper">
+                                    <div id="popup" className="popup">
                                         <ContainerPopup>
                                             <TitlePopup>Selecione a quantidade desejada</TitlePopup>
                                             <StyleSelect onChange={onChange}>
@@ -104,25 +102,12 @@ const CardFood = () => {
                                                 <option>10</option>
                                             </StyleSelect>
                                             <DivButtonPopup>
-                                            <ButtonPopup onClick={() => addToCart()}>Adicionar ao carrinho</ButtonPopup>
+                                                <ButtonPopup onClick={() => addToCart()}>Adicionar ao carrinho</ButtonPopup>
                                             </DivButtonPopup>
-                                            </ContainerPopup>
-                                        </div>
-                                        </div>
-                                       
-
-                                        <div>
-                                            <div>
-                                                <PriceFood>R${food.price}</PriceFood>
-                                            </div>
-                                            <Button onClick={()=> openQuantity(food)}>Adicionar</Button>
-                                        </div>
-
-                                    </ConainerBottom>
-
-                                </DivInfo>
-
-                            </DivContainer>
+                                        </ContainerPopup>
+                                    </div>
+                                </div>
+                            </CardProductContainer >
                         )
                     })}
             </div>

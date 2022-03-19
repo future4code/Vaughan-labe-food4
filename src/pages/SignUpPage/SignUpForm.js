@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom"
 import { goToLogin } from "../../routes/coordinator"
 import UseForm from "../../hooks/useForm"
 import { signUp } from "../../services/Requests"
-import { TextField, InputAdornment } from "@mui/material"
+import { TextField, InputAdornment, CircularProgress } from "@mui/material"
 import { Visibility, VisibilityOff } from "@mui/icons-material"
 import back from "../../assets/back.png"
 import logo from "../../assets/logo-future-eats-invert@2x.png"
@@ -13,7 +13,7 @@ const SignUpForm = () => {
   const navigate = useNavigate()
   const [showPassword, setShowPassword] = useState(false);
   const { form, onChange, clearFields } = UseForm({ name: "", email: "", cpf: "", password: "", confirmation: "" })
-
+  const [isLoading, setIsLoading] = useState(false)
   const body = {
     name: form.name,
     email: form.email,
@@ -25,7 +25,7 @@ const SignUpForm = () => {
   const submit = (event) => {
     event.preventDefault()
     if (form.password === form.confirmation) {
-      signUp(body, clearFields, navigate)
+      signUp(body, clearFields, navigate, setIsLoading)
     }
   }
 
@@ -65,9 +65,11 @@ const SignUpForm = () => {
             fullWidth
           />
           <TextField
+            type={"number"}
             name={"cpf"}
             label={"CPF"}
             placeholder="000.000.000-00"
+            inputProps={{pattern: '^[0-9]{3}.?[0-9]{3}.?[0-9]{3}-?[0-9]{2}', title: "O CPF precisa conter no mínimo 11 dígitos!"}}
             value={form.cpf}
             onChange={onChange}
             required
@@ -120,7 +122,7 @@ const SignUpForm = () => {
               )
             }}
           />
-          <Button variant="contained" color={"primary"} type="submit" fullWidth>Criar</Button>
+          <Button variant="contained" color={"primary"} type="submit" fullWidth> {isLoading ? <CircularProgress color="inherit" size={24}/> : <>Criar</>}</Button>
         </ContainerField>
       </form>
     </ContainerInput>
