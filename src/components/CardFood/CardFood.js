@@ -116,7 +116,7 @@ const CardFood = () => {
 
     return (
         <div>
-            {loading ? <LoadingStyle></LoadingStyle> : divisionCategories}
+            {divisionCategories}
         </div >
     )
 }
