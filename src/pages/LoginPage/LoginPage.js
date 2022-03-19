@@ -4,19 +4,20 @@ import { goToSingUp } from "../../routes/coordinator"
 import { login } from "../../services/Requests"
 import { useNavigate } from "react-router-dom"
 import { Visibility, VisibilityOff } from "@mui/icons-material"
-import { TextField, InputAdornment } from "@mui/material"
+import { TextField, InputAdornment, CircularProgress } from "@mui/material"
 import { ContainerInput, ContairnerImg, ButtonSignUpStyle, ContainerField, Button } from "./styled"
 import logo from "../../assets/logo-future-eats-invert@2x.png"
 import Splash from "../../assets/logo-future-eats.png"
+
 
 const LoginPage = () => {
   const navigate = useNavigate()
   const [showPassword, setShowPassword] = useState(false);
   const { form, onChange, clearFields } = UseForm({ email: "", password: "", })
-
+  const [isLoading, setIsLoading] = useState(false)
   const submit = (event) => {
     event.preventDefault()
-    login(form, clearFields, navigate)
+    login(form, clearFields, navigate, setIsLoading)
   }
 
   const handleShowPassword = () => {
@@ -35,7 +36,7 @@ const LoginPage = () => {
       <div className="splashScreen">
 
       <div className="splash">
-        <img src={Splash} className="fade-in"/>
+        <img src={Splash} className="fade-in" alt="animação tela inicial"/>
       </div>
 
       </div>
@@ -78,7 +79,7 @@ const LoginPage = () => {
             }}
           />
 
-          <Button variant="contained" color={"primary"} type="submit" >Entrar</Button>
+          <Button variant="contained" color={"primary"} type="submit" > {isLoading ? <CircularProgress color="inherit" size={24}/> :  <>Entrar</>}</Button>
         </ContainerField>
       </form>
 
