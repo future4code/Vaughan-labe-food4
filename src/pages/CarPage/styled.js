@@ -37,6 +37,36 @@ height: 100%;
         margin-top: 0px;
     }
 }
+.addressRes{
+    width: 100%;
+    div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    
+    width: 100%;
+
+    .p1{
+        color: #5cb646;
+        width: 90%;
+        margin-bottom: 5px;
+    }
+    .p2{
+        color: #b8b8b8;
+        font-size: 16px;
+        width: 90%;
+        margin: 0px 0px 5px 0px;
+    }
+    .p3{
+        color: #b8b8b8;
+        font-size: 16px;
+        width: 90%;
+        margin: 0px 0px 10px 0px;
+    }
+    }
+    
+}
 .payments{
     display: flex;
     flex-direction: column;

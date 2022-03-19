@@ -5,12 +5,15 @@ import { ContainerCart } from "./styled";
 import NavBarCart from "../../components/NavBar/NavBarCart";
 import useRequestData from "../../hooks/useRequestData";
 import { BASE_URL } from "../../constants/url";
+import Card from "../../components/Card/Card";
+import { useEffect } from "react";
 
 const CarPage = () => {
   const {cart, setCart, removeTheFood, cartRest} = useContext(GlobalStateContext)  
   const profile = useRequestData([], `${BASE_URL}/profile`)
   const [restaurant] = useRequestData([], `${BASE_URL}/restaurants/${cartRest}`)
 
+ 
 
  const valueAll = () =>{
     let valueAllCart = 0
@@ -20,9 +23,8 @@ const CarPage = () => {
     return valueAllCart + restaurant?.restaurant?.shipping
 
 }
-  
-  
-  return (
+
+return (
     <>
     <ContainerCart>
       <h3 className="myCart">Meu carrinho</h3>
@@ -32,24 +34,32 @@ const CarPage = () => {
         <p className="p2">{profile[0]?.user?.address}</p>
       </div>
       
-      <div>
-        {cart.length === 0? "": <a>{restaurant?.restaurant?.address}</a>
-
+      <div className="addressRes">
+        {cart.length === 0? "": 
+          <div >
+          <p className="p1">{restaurant?.restaurant?.name}</p>
+          <p className="p2">{restaurant?.restaurant?.address}</p>
+          <p className="p3">{restaurant?.restaurant?.deliveryTime} min</p>
+          </div>
         }
       </div>
+
       <div>
         {cart.length === 0? <p>carrinho vazio</p>: cart.map((food)=>{
           return(
-            <div key={food.id}>
-                {food.name}
-                <button onClick={()=>removeTheFood(food)}>remover</button>
-              </div>
+            <Card 
+              key={food.id}
+              photo={food.photoUrl}
+              name={food.name}
+              description={food.description}
+              price={food.price}
+              quantity={food.quantity}
+              remove={()=>removeTheFood(food)}
+              />
           )
         })}
       </div>
-
      
-
       <div className="payments">
 
         <div className="frete">
@@ -63,7 +73,7 @@ const CarPage = () => {
         </div>
 
         <div>
-        <Payments cart={cart} resId={cartRest}/>
+        <Payments cart={cart} resId={cartRest} />
         </div>
       
       </div>

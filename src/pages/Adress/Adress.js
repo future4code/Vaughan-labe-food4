@@ -9,18 +9,19 @@ import back from "../../assets/back.png"
 
 const Adress = () =>{
     const navigate = useNavigate()
-    const {form, onChange, clearFields} = UseForm({
+    const {form, onChange, clearFields} = UseForm(
+      {
         street: "",
         number: "",
         neighbourhood: "",
         city: "",
         state: "",
         complement: ""
-      })
+      }
+      )
       const submit = (event) =>{
         event.preventDefault()
         adress(form, clearFields, navigate)
-        console.log(form)
         clearFields()
       }
     return (  
@@ -42,7 +43,7 @@ const Adress = () =>{
         />
        <TextField
        name={"number"}
-       placeholder="Apto./Bloco"
+       placeholder="Número"
        value={form.number}
        label={"Número"}
        required
@@ -50,7 +51,7 @@ const Adress = () =>{
        />
        <TextField
        name={"complement"}
-       placeholder="Complemento"
+       placeholder="Apto./Bloco"
        value={form.complement}
        label={"Complemento"}
        variant="outlined"

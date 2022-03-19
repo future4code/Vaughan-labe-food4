@@ -9,21 +9,34 @@ import { DivContainer, StyleSelect, ButtonPopup, PriceFood, NameFood,
 const CardFood = () => {
     const [amount, setAmount] = useState(0)
     const [food, setFood] = useState([])
-    const { cart, setCart } = useContext(GlobalStateContext)
+    const { cart, setCart, loading, buttonCard, setButtonCard } = useContext(GlobalStateContext)
     const params = useParams()
-    const { loading } = useContext(GlobalStateContext)
     const [foods] = useRequestData([], `${BASE_URL}/restaurants/${params.id}`)
     
 
+    const addRemove = () => {
+        const newProductCart = [...cart]
+        const findIndex = newProductCart.findIndex((product)=>{
+            return product.id === food.id
+        })
+        if(findIndex === -1){
+            setButtonCard("adicionar")
+        }else{
+            setButtonCard("remover")
+        }
+        console.log(findIndex)
+
+    }
 
     const openQuantity = (food) => {
         document.querySelector(`.popup-wrapper`).style.display = `block`
         setFood(food)
     }
-
     const exitQuantify = () => {
         document.querySelector(`.popup-wrapper`).style.display = `none`
     }
+
+
     const addToCart = () => {
         const quantity = Number(amount)
         const newCart = [...cart]
@@ -39,7 +52,6 @@ const CardFood = () => {
         exitQuantify()
     }
     
-
     const onChange = (e) => {
         setAmount(e.target.value)
     }
@@ -80,6 +92,7 @@ const CardFood = () => {
                                         <ContainerPopup>
                                             <TitlePopup>Selecione a quantidade desejada</TitlePopup>
                                             <StyleSelect onChange={onChange}>
+                                                <option>0</option>
                                                 <option>1</option>
                                                 <option>2</option>
                                                 <option>3</option>
@@ -92,7 +105,7 @@ const CardFood = () => {
                                                 <option>10</option>
                                             </StyleSelect>
                                             <DivButtonPopup>
-                                            <ButtonPopup onClick={() => addToCart()}>adicionar ao carrinho</ButtonPopup>
+                                            <ButtonPopup onClick={() => addToCart()}>Adicionar ao carrinho</ButtonPopup>
                                             </DivButtonPopup>
                                             </ContainerPopup>
                                         </div>
@@ -103,7 +116,7 @@ const CardFood = () => {
                                             <div>
                                                 <PriceFood>R${food.price}</PriceFood>
                                             </div>
-                                            <Button onClick={()=> openQuantity(food)} >adicionar</Button>
+                                            <Button onClick={()=> openQuantity(food)}>{addRemove()}{buttonCard}</Button>
                                         </div>
 
                                     </ConainerBottom>

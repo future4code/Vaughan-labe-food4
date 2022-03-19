@@ -1,34 +1,34 @@
-import React, { useState } from "react";
-import { TextField, InputAdornment } from "@mui/material"
-import logo from "../../assets/logo-future-eats-invert@2x.png"
+import React, { useState } from "react"
 import UseForm from "../../hooks/useForm"
-import { Visibility, VisibilityOff } from "@mui/icons-material"
-import { ContainerInput, ContairnerImg, ButtonSignUpStyle, ContainerField, Button} from "./styled"
+import { goToSingUp } from "../../routes/coordinator"
 import { login } from "../../services/Requests"
 import { useNavigate } from "react-router-dom"
-import { goToSingUp } from "../../routes/coordinator"
+import { Visibility, VisibilityOff } from "@mui/icons-material"
+import { TextField, InputAdornment } from "@mui/material"
+import { ContainerInput, ContairnerImg, ButtonSignUpStyle, ContainerField, Button } from "./styled"
+import logo from "../../assets/logo-future-eats-invert@2x.png"
 
 const LoginPage = () => {
   const navigate = useNavigate()
   const [showPassword, setShowPassword] = useState(false);
-  const { form, onChange, clearFields } = UseForm({
-    email: "",
-    password: "",
-  })
+  const { form, onChange, clearFields } = UseForm({ email: "", password: "", })
+
   const submit = (event) => {
     event.preventDefault()
     login(form, clearFields, navigate)
-
   }
+
   const handleShowPassword = () => {
     setShowPassword(!showPassword)
   }
+
   return (
     <ContainerInput>
 
       <ContairnerImg>
         <img src={logo} alt={"Logo"} />
       </ContairnerImg>
+
       <form onSubmit={submit}>
 
         <p>Entrar</p>
@@ -36,7 +36,7 @@ const LoginPage = () => {
         <ContainerField>
           <TextField
             name={"email"}
-            placeholder="email"
+            placeholder="email@email.com"
             value={form.email}
             label={"E-mail"}
             type={"text"}
@@ -46,7 +46,7 @@ const LoginPage = () => {
           />
           <TextField
             name={"password"}
-            placeholder="Senha"
+            placeholder="Mínimo 6 caracteres"
             value={form.password}
             label={"Senha"}
             variant="outlined"
@@ -65,12 +65,13 @@ const LoginPage = () => {
 
           <Button variant="contained" color={"primary"} type="submit" >Entrar</Button>
         </ContainerField>
-
       </form>
+
       <ButtonSignUpStyle
         onClick={() => goToSingUp(navigate)}
       >Não possui cadastro? Clique aqui.
       </ButtonSignUpStyle>
+
     </ContainerInput>
   )
 }

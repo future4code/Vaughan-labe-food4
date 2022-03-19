@@ -1,5 +1,7 @@
 
 import styled from 'styled-components'
+import Box from "@mui/material/Box"
+
 export const ContainerFilter=styled.div`
 .mySwiper{
     display: inline;
@@ -54,5 +56,3 @@ export const ContainerFilter=styled.div`
 }
 
 `
-
-
