@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { Box, CardMedia } from '@mui/material'
 
 export const LoadingStyle = styled.div`
     position: absolute;
