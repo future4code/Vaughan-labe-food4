@@ -10,10 +10,13 @@ const GlobalState = (props) => {
     const [cartRest, setCartRest] = useState([])
     const [buttonCard, setButtonCard] = useState()
 
+
     const removeTheFood = (food) => {
         const filterFood = cart.filter((f)=> f.id !== food.id)
         setCart(filterFood)
     }
+
+
     const data = {
         cart,
         setCart,
@@ -24,7 +27,7 @@ const GlobalState = (props) => {
         cartRest,
         setCartRest,
         buttonCard,
-        setButtonCard
+        setButtonCard,
     }
     
     return(

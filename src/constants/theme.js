@@ -1,15 +1,18 @@
 import { createTheme } from '@mui/material';
-import { primary, neutralColor, color2 } from './color';
+import { primary, neutralColor, neutralColor2 } from './color';
 
 const theme = createTheme({
   palette: {
     primary: {
       main: primary,
-      contrastText: color2
+      contrastText: neutralColor
     },
-    text: {
-      primary: neutralColor
-    }
+    secondary: {
+      main: primary,
+      contrastText: neutralColor2
+  }
   }
 });
 export default theme 
+
+

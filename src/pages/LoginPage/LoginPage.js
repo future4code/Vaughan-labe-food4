@@ -7,6 +7,7 @@ import { Visibility, VisibilityOff } from "@mui/icons-material"
 import { TextField, InputAdornment } from "@mui/material"
 import { ContainerInput, ContairnerImg, ButtonSignUpStyle, ContainerField, Button } from "./styled"
 import logo from "../../assets/logo-future-eats-invert@2x.png"
+import Splash from "../../assets/logo-future-eats.png"
 
 const LoginPage = () => {
   const navigate = useNavigate()
@@ -22,8 +23,22 @@ const LoginPage = () => {
     setShowPassword(!showPassword)
   }
 
+  document.addEventListener('DOMContentLoaded', (e)=>{
+    setTimeout(()=>{
+      document.querySelector(`.splash`).style.display = `none`
+    },2500);
+  })
+
+
   return (
     <ContainerInput>
+      <div className="splashScreen">
+
+      <div className="splash">
+        <img src={Splash} className="fade-in"/>
+      </div>
+
+      </div>
 
       <ContairnerImg>
         <img src={logo} alt={"Logo"} />

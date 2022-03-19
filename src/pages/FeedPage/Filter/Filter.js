@@ -6,21 +6,20 @@ const CategoriesFilter = (props) => {
     const { handleCategory} = props
     
     const handleChange = (event, newValue) => {
-        setValue(newValue);
+        setValue(newValue)
     }
 
     return (
 
-        <Box sx={{ maxWidth: 350 }}>
+        <Box sx={{ maxWidth: 350}}>
             <Tabs
                 onChange={handleChange}
                 value={value}
                 variant='scrollable'
                 scrollButtons={false}
-
                 indicatorColor="transparent" 
             >
-                <Tab style={{ textTransform: 'none', fontSize: 18 }} onClick={() => handleCategory('')} label="Todos" />
+                <Tab style={{ textTransform: 'none', fontSize: 16, color: "secondary" }} onClick={() => handleCategory('')} label="Todos" />
                 <Tab style={{ textTransform: 'none', fontSize: 16 }} onClick={() => handleCategory("Árabe")} label="Árabe" />
                 <Tab style={{ textTransform: 'none', fontSize: 16 }} onClick={() => handleCategory("Asiática")} label="Asiática" />
                 <Tab style={{ textTransform: 'none', fontSize: 16 }} onClick={() => handleCategory("Hamburguer")} label="Hamburguer" />    

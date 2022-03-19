@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { CardActionArea, CardContent, CardMedia, Typography, Card } from '@mui/material'
-import { LoadingStyle, InfoRestaurant, ContainerCard } from '../styled'
+import { LoadingStyle, InfoRestaurant, ContainerCard, Container } from './styled'
 import { useNavigate } from 'react-router-dom'
 import { goToRestaurant } from '../../../routes/coordinator'
 import GlobalStateContext from '../../../global/GlobalStateContext'
@@ -49,7 +49,7 @@ const CardFeed = () => {
                                 </Typography>
                                 <InfoRestaurant>
                                     <Typography variant="body1" color="text.secondary">
-                                        {rest.deliveryTime} min
+                                    {rest.deliveryTime - 10} - {rest.deliveryTime} min
                                     </Typography>
                                     <Typography variant="body1" color="text.secondary">
                                         Frete: R${rest.shipping},00
@@ -64,12 +64,12 @@ const CardFeed = () => {
         })
 
     return (
-        <div>
+        <Container>
             <CategoriesFilter
                 handleCategory={handleCategory}
             />
-            {loading ? <LoadingStyle></LoadingStyle> : <div>{restaurantList} <ActiveOrder /></div>}
-        </div>
+            {loading ? <LoadingStyle/> : <div>{restaurantList} <ActiveOrder /></div>}
+        </Container>
     )
 }
 export default CardFeed

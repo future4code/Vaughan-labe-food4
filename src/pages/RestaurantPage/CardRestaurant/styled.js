@@ -29,7 +29,7 @@ export const CardMediaStyle = styled(CardMedia)`
 export const LoadingStyle = styled.div`
     position: absolute;
     top: 40vh;
-    left: 45vw;
+    left: 40vw;
     border: 6px solid #BEFFA2;
     border-top-color: #6CC247;
     width: 50px;

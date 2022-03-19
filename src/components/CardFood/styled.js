@@ -4,6 +4,7 @@ import { Box, CardMedia } from '@mui/material'
 export const InfoRestaurant = styled(Box)`
   display: flex;
   justify-content: space-between;
+  
 `
 export const BoxBotton = styled(Box)`
 display: flex;
@@ -23,6 +24,7 @@ border-radius: 8px 0px 0px 0px;
 `
 export const CardMediaStyle = styled(CardMedia)`
     margin-right: -50px;
+
 `
 export const LoadingStyle = styled.div`
     position: absolute;
