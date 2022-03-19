@@ -7,7 +7,8 @@ import PanoramaFishEyeIcon from '@mui/icons-material/PanoramaFishEye';
 import RadioButtonCheckedIcon from '@mui/icons-material/RadioButtonChecked';
 
 
-const Payments = ({ cart, resId }) => {
+
+const Payments = ({ cart, resId, }) => {
     const navigate = useNavigate()
     const [money, setMoney] = useState(false)
     const [creditCard, setCreditCard] = useState(false)

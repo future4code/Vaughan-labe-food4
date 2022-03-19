@@ -1,15 +1,17 @@
 import React, { useContext, useEffect, useState } from "react"
-import { ContainerCard, PageTittleContainer, TittleNavContainer, BackImg, InfoRestaurant } from "./styled"
+import { ContainerCard, PageTittleContainer, TittleNavContainer, BackImg, InfoRestaurant, HeaderContainer } from "./styled"
 import Box from '@mui/material/Box'
 import Back from '../../assets/back.png'
 import OutlinedInput from '@mui/material/OutlinedInput'
 import InputAdornment from '@mui/material/InputAdornment'
 import FormControl from '@mui/material/FormControl'
 import SearchIcon from '@mui/icons-material/Search'
-import { Card, CardActionArea, CardContent, CardMedia, Typography } from "@mui/material"
-import { useNavigate } from "react-router-dom"
-import { goToFeed, goToRestaurant } from "../../routes/coordinator"
-import GlobalStateContext from "../../global/GlobalStateContext"
+import Divider from '@mui/material/Divider';
+import { Button, Card, CardActionArea, CardContent, CardMedia, Typography } from "@mui/material";
+import { useNavigate } from "react-router-dom";
+import { goToFeed, goToRestaurant } from "../../routes/coordinator";
+import GlobalStateContext from "../../global/GlobalStateContext";
+import back from "../../assets/back.png"
 
 const SearchPage = () => {
   const { restaurants, setCartRest } = useContext(GlobalStateContext)
@@ -67,13 +69,12 @@ const SearchPage = () => {
       )
     })
 
-  const navigate = useNavigate()
   return (
     <div>
 
       <PageTittleContainer>
         <TittleNavContainer>
-          <BackImg src={Back} onClick={() => goToFeed(navigate)} />
+          <BackImg src={Back} onClick={() => goToFeed(Navigate)} />
           <p>Busca</p>
         </TittleNavContainer>
       </PageTittleContainer>

@@ -11,7 +11,7 @@ height: 100%;
     border-bottom: 1px solid #dfdfdf;
     width: 100%;
     height: 40px;
-    
+    font-size: 16px;
 }
 .edit{
     margin-right: 20px;
@@ -42,6 +42,7 @@ export const ContainerImgProfile = styled.div`
             height: 34px;
         }
     }
+    
 `
 
 export const ContainerMap = styled.div`
@@ -49,10 +50,21 @@ export const ContainerMap = styled.div`
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    margin: 0 25px;
+    /* gap: 0rem; */
+    margin-left: 13px;
+    .p1{
+        margin-bottom: 5px;
+    }
+    .p2{
+        margin: 6px 0px 6px 13px;
+    }
+    .p3{
+        margin: 5px 0px 25px 13px;
+    }
     p{
-        
-        font-size: 18px;
+        /* padding-right: 25px; */
+        margin: 12px;
+        font-size: 16px;
     }
     
 `
@@ -60,17 +72,65 @@ export const ContainerAddress = styled.div`
     position: relative;
     bottom: 8rem;
     background-color: #eeeeee;
+    
     p{
         display: flex;
         justify-content: space-between;
         color:#b8b8b8;
+        margin: 12px 0 0 25px;
         img{
             width: 34px;
             height: 34px;
-            
-        }
-        
+        }        
     }
+    h2{
+        font-size: 16px;
+        color: black;
+        margin: 0px 0px 12px 25px;
+    }
+`
+
+export const ContainerMapHistory = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    background-color: white;
+    width: 100%;
+    h3{
+    font-size: 16px;
+    border-bottom: 1px solid #000000;
+    width: 328px;
+    margin: 13px 0px 0px;
+    }
+`
+
+export const ContainerHistory = styled.div`
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    background-color: white;
+    width: 90%;
+    height: 112px;
+    border-radius: 8px;
+    border: solid 1px #b8b8b8;
+    
+    .p1History{
+        font-weight: 600;
+        font-size: 16px;
+        color: #5cb646;
+    }
+    .p2History{
+        font-weight: 600;
+        font-size: 12px;
+        color: black;
+    }
+    .p3History{
+        font-weight: bold;
+        font-size: 16px;
+        color: black;
+    }
+    
 `
 export const PageTittleContainer = styled.div`
     position: fixed;
