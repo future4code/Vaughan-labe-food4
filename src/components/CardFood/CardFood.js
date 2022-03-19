@@ -115,7 +115,7 @@ const CardFood = () => {
                                             <div>
                                                 <PriceFood>R${food.price}</PriceFood>
                                             </div>
-                                            <Button onClick={()=> openQuantity(food)}>{addRemove()}{buttonCard}</Button>
+                                            <Button onClick={()=> openQuantity(food)}>Adicionar</Button>
                                         </div>
 
                                     </ConainerBottom>
