@@ -68,7 +68,7 @@ const CardFeed = () => {
             <CategoriesFilter
                 handleCategory={handleCategory}
             />
-            {loading ? <LoadingStyle></LoadingStyle> : <div>{restaurantList} <ActiveOrder /></div>}
+            {loading ? <LoadingStyle/> : <div>{restaurantList} <ActiveOrder /></div>}
         </Container>
     )
 }
