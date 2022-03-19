@@ -65,9 +65,11 @@ const SignUpForm = () => {
             fullWidth
           />
           <TextField
+            type={"number"}
             name={"cpf"}
             label={"CPF"}
             placeholder="000.000.000-00"
+            inputProps={{pattern: '^[0-9]{3}.?[0-9]{3}.?[0-9]{3}-?[0-9]{2}', title: "O CPF precisa conter no mínimo 11 dígitos!"}}
             value={form.cpf}
             onChange={onChange}
             required
