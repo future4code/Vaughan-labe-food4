@@ -2,12 +2,13 @@ import axios from "axios"
 import { BASE_URL } from "../constants/url";
 import { goToAdress, goToFeed, goToProfile, goToLogin } from "../routes/coordinator";
 
-export const login = (body, clear, navigate) => {
-  
+export const login = (body, clear, navigate, setIsLoading) => {
+  setIsLoading(true)
   axios.post(`${BASE_URL}/login`, body)
   .then((response)=>{
     localStorage.setItem("token", response.data.token)
      clear()
+     setIsLoading(false)
      goToFeed(navigate)
     })
     .catch((error)=>{
@@ -15,12 +16,14 @@ export const login = (body, clear, navigate) => {
     })
 }
 
-export const signUp = (body, clear, navigate) =>{
+export const signUp = (body, clear, navigate, setIsLoading) =>{
+  setIsLoading(true)
   axios.post(`${BASE_URL}/signup`, body, navigate)
   .then((responde)=>{
   localStorage.setItem("token", responde.data.token)
   clear()
   alert("Usuario cadastrado com sucesso")
+  setIsLoading(false)
    goToAdress(navigate)
   })
   .catch((error)=>{
@@ -29,7 +32,8 @@ export const signUp = (body, clear, navigate) =>{
       
 }
 
-export const adress = (body, clear, navigate) =>{
+export const adress = (body, clear, navigate, setIsLoading) =>{
+  setIsLoading(true)
   const axiosConfig = {
     headers:{
       auth: window.localStorage.getItem("token")
@@ -39,6 +43,7 @@ export const adress = (body, clear, navigate) =>{
   .then((response)=>{
     console.log(response.data)
     clear()
+    setIsLoading(false)
     goToLogin(navigate)
     localStorage.removeItem("token")
   })
