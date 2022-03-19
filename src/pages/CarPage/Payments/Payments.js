@@ -1,4 +1,4 @@
-import {  FormGroup, FormControlLabel } from "@mui/material";
+import { FormControlLabel } from "@mui/material";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { confirmPurchase } from "../../../services/Requests";

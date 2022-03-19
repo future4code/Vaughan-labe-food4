@@ -1,21 +1,6 @@
 import styled from "styled-components";
 import { Box } from '@mui/material'
 
-export const Title = styled.div`
-    display: flex;
-    padding: 10px;
-    justify-content: flex-start;
-    align-items: stretch;
-    width: 100%;
-    border-bottom: 1px solid #c4c4c4;
-    margin-bottom: 1px;
-    h2{
-        font-size: 15px;
-        font-weight: 500;
-        
-    }
-`
-
 export const InfoRestaurant = styled(Box)`
     display: flex;
     justify-content: space-between;
@@ -40,8 +25,43 @@ export const ContainerSearch = styled.div`
    width: 300px;
 }
 `
-
-export const H2 = styled.h2`
+export const PageTittleContainer = styled.div`
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    box-shadow: 0 0.5px 0 0 rgba(0, 0, 0, 0.25);
+    background-color: #FFF;
     display: flex;
-    padding-left: 100px;
+    justify-content: center;
+    align-items: flex-end;
+    z-index: 1;
 `
+export const TittleNavContainer = styled.div`
+    font-family: 'Roboto', sans-serif;
+    font-weight: 550;
+    width: 360px;
+    height: 44px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+`
+export const BackImg = styled.img`
+    position: fixed;
+    left: 16px;
+    width: 15px;
+    height: 15px;
+`
+export const TextRest = styled.p`
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 550;
+`
+export const Container =styled.div`
+margin-top: 40px;
+margin-bottom:75px;
+    display: flex;
+    flex-direction: row;
+
+` 
