@@ -49,6 +49,7 @@ const Adress = () => {
           />
           <TextField
             name={"number"}
+            type={"number"}
             placeholder="Número"
             value={form.number}
             label={"Número"}
@@ -61,7 +62,6 @@ const Adress = () => {
             value={form.complement}
             label={"Complemento"}
             variant="outlined"
-
             type={"text"}
             onChange={onChange}
           />
@@ -70,6 +70,7 @@ const Adress = () => {
             placeholder="Bairro"
             value={form.neighbourhood}
             label={"Bairro"}
+            type={"text"}
             required
             onChange={onChange}
           />
@@ -89,7 +90,6 @@ const Adress = () => {
             value={form.state}
             label={"Estado"}
             variant="outlined"
-
             type={"text"}
             required
             onChange={onChange}

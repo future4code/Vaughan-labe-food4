@@ -3,7 +3,7 @@ import { Box, CardMedia } from '@mui/material'
 
 export const InfoRestaurant = styled(Box)`
   display: flex;
-  justify-content: space-between;
+  gap: 30px;
 `
 export const BoxBotton = styled(Box)`
 display: flex;
@@ -52,4 +52,9 @@ export const ContainerCard = styled.div`
 @media screen and (max-width: 321px){ 
    width: 315px;
 }
+`
+export const CardInfos = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 `
