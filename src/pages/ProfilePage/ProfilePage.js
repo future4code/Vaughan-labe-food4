@@ -2,10 +2,8 @@ import React, { useEffect } from "react";
 import NavBarProfile from "../../components/NavBar/NavBarPorfile";
 import useRequestData from "../../hooks/useRequestData"
 import { BASE_URL } from "../../constants/url"
-import {
-  ContainerProfile, ContainerInfoProfile, ContainerImgProfile, ContainerMap,
-  ContainerAddress, ContainerHistory, ContainerMapHistory
-} from "./styled";
+import { ContainerProfile, ContainerInfoProfile, ContainerImgProfile, PageTittleContainer, 
+TittleNavContainer, ContainerMap, ContainerAddress, ContainerHistory, ContainerMapHistory } from "./styled";
 import edit from "../../assets/edit@2x.png"
 import { useNavigate } from "react-router-dom";
 import { goToEditAddress, goToEditLogin } from "../../routes/coordinator";
@@ -21,8 +19,13 @@ const ProfilePage = () => {
   console.log(historyOrden)
   return (
     <ContainerProfile>
-      <h3 className="myUpDateProfile">Meu Perfil</h3>
 
+      <PageTittleContainer>
+        <TittleNavContainer>
+        <p>Meu perfil</p>
+        </TittleNavContainer>
+      </PageTittleContainer>
+      
       <ContainerInfoProfile>
         <ContainerImgProfile>
           <button onClick={() => goToEditLogin(navigate)}><img onClick={() => goToEditLogin(navigate)} src={edit} alt={"Imagem de editar"} /></button>
