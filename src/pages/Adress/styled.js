@@ -60,6 +60,7 @@ export const PageTittleContainer = styled.div`
 `
 export const TittleNavContainer = styled.div`
     width: 360px;
+    margin-top: 20px;
     height: 44px;
     display: flex;
     text-align: center;

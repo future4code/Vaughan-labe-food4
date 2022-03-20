@@ -16,13 +16,11 @@ margin-bottom:75px;
     flex-direction: row;
 }
 ` 
-
 export const PageTittleContainer = styled.div`
     position: fixed;
     top: 0;
     width: 100%;
     box-shadow: 0 0.5px 0 0 rgba(0, 0, 0, 0.25);
-    background-color: #FFF;
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -30,6 +28,7 @@ export const PageTittleContainer = styled.div`
 `
 export const TittleNavContainer = styled.div`
     font-family: 'Roboto', sans-serif;
+    margin-top: 20px;
     font-weight: 550;
     width: 360px;
     display: flex;
