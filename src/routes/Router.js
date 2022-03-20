@@ -21,15 +21,15 @@ export const Router = () => {
 
       <Routes>
         <Route path="/" element={<LoginPage/>} />
-        <Route path="/signUp" element={<SignUpPage/>}/>
-        <Route path="/adress" element={<Adress/>}/>
+        <Route path="/cadastro" element={<SignUpPage/>}/>
+        <Route path="/endereco" element={<Adress/>}/>
         <Route path="/feed" element={<FeedPage/>}/>
-        <Route path="/restaurant/:id" element={<RestaurantPage/>}/>
-        <Route path="/search" element={<SearchPage/>}/>
-        <Route path="/profile" element={<ProfilePage/>}/>
-        <Route path="/profile/editProfile" element={<EditProfile/>}/>
-        <Route path="/profile/editAddress" element={<EditAddress/>}/>
-        <Route path="/car" element={<CarPage/>}/>
+        <Route path="/restaurante/:id" element={<RestaurantPage/>}/>
+        <Route path="/pesquisa" element={<SearchPage/>}/>
+        <Route path="/perfil" element={<ProfilePage/>}/>
+        <Route path="/perfil/editarPerfil" element={<EditProfile/>}/>
+        <Route path="/perfil/editarEndereco" element={<EditAddress/>}/>
+        <Route path="/carrinho" element={<CarPage/>}/>
         <Route path="*" element={<ErrorPage/>}/>
         
       </Routes>

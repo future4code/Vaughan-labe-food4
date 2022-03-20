@@ -73,6 +73,7 @@ export const PageTittleContainer = styled.div`
 export const TittleNavContainer = styled.div`
     width: 360px;
     height: 44px;
+    margin-top: 20px;
     display: flex;
     text-align: center;
     align-items: center;
@@ -83,4 +84,8 @@ export const BackImg = styled.img`
     left: 16px;
     width: 15px;
     height: 15px;
+`
+export const ErrorPassword = styled.h1`
+    color: red;
+    font-size: 12px;
 `

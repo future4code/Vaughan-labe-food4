@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import {alerts} from '../constants/alerts'
 import axios from 'axios'
 
 const useRequestData = (initialState, url) => {
@@ -17,7 +18,7 @@ const useRequestData = (initialState, url) => {
                 setData(response.data)
             })
             .catch((error) => {
-                alert(error.response.data.message)
+                alerts("error", error.response.data.message)
             })
     }, [url])
 

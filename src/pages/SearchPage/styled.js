@@ -42,6 +42,7 @@ export const TittleNavContainer = styled.div`
     font-weight: 550;
     width: 360px;
     height: 44px;
+    margin-top: 20px;
     display: flex;
     text-align: center;
     align-items: center;

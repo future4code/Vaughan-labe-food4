@@ -5,7 +5,7 @@ import { login } from "../../services/Requests"
 import { useNavigate } from "react-router-dom"
 import { Visibility, VisibilityOff } from "@mui/icons-material"
 import { TextField, InputAdornment, CircularProgress } from "@mui/material"
-import { ContainerInput, ContairnerImg, ButtonSignUpStyle, ContainerField, Button } from "./styled"
+import { ContainerInput, ContairnerImg, ButtonSignUpStyle, ContainerField, ButtonStyle } from "./styled"
 import logo from "../../assets/logo-future-eats-invert@2x.png"
 import Splash from "../../assets/logo-future-eats.png"
 
@@ -79,7 +79,7 @@ const LoginPage = () => {
             }}
           />
 
-          <Button variant="contained" color={"primary"} type="submit" > {isLoading ? <CircularProgress color="inherit" size={24}/> :  <>Entrar</>}</Button>
+          <ButtonStyle type="submit" > {isLoading ? <CircularProgress color="inherit" size={24}/> :  <>Entrar</>}</ButtonStyle>
         </ContainerField>
       </form>
 

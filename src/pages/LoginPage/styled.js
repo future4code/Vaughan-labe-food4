@@ -73,7 +73,7 @@ export const ContainerField = styled.div`
     flex-direction: column;
     gap: 16px;
 `
-export const Button = styled.button`
+export const ButtonStyle = styled.button`
     font-size: 16px;
     font-family: 'Roboto', sans-serif;
     font-weight: 550;
