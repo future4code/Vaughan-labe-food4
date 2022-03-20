@@ -5,7 +5,6 @@ import UseForm from "../../hooks/useForm"
 import { signUp } from "../../services/Requests"
 import { TextField, InputAdornment, CircularProgress } from "@mui/material"
 import { Visibility, VisibilityOff } from "@mui/icons-material"
-import back from "../../assets/back.png"
 import logo from "../../assets/logo-future-eats-invert@2x.png"
 import { ContainerInput, ContairnerImg, ContainerField, Button, LogoImg, BackImg, ErrorPassword } from "./styled"
 
