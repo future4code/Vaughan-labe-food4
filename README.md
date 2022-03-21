@@ -3,6 +3,7 @@
 
 <p align="center">
   <a href="#sobre">Sobre</a> &#xa0;|&#xa0; 
+  <a href="#orientar">Orientações</a> &#xa0;|&#xa0; 
   <a href="#funciona">O que funciona</a> &#xa0;|&#xa0;
   <a href="#pendente">Em desenvolvimento</a> &#xa0;|&#xa0;
   <a href="#imagens">Imagens do Site</a>  &#xa0;|&#xa0;
@@ -14,7 +15,19 @@
 <p align="center">🖊️ Projeto desenvolvido conforme proposta do bootcamp ministrado pela Labenu baseado em React JS, para o desenvolvimento de um web site para dispositivos mobile inspirado no Uber Eats. O projeto simula uma plataforma de entrega de refeições e alimentos online. </p>
 
 <h2 id="link">:link: Link Surge - link para visualização do site</h2>
- <a href=>FutureEats</a>
+ <a href="https://futureeats-lebefood4.surge.sh/">FutureEats</a>
+ 
+ <h2 id="orientar">🚨 Orientações para acesso</h2>
+ 
+* Login
+E-mail: future4@gmail.com
+Senha: 123456
+
+* Cadastro
+
+1. Preencher o formulário de dados pessoais e endereço;
+2. Recarregar a página e efetuar login com dados cadastrados;
+3. Recarregar o feed para que as informações apareçam.
 
 <h2 id="tecnologias"> 🛠 Tecnologias </h2>
 
@@ -74,11 +87,19 @@ Ferramentas usadas na construção do projeto:
 <h2 id="pendente">:construction: Em desenvolvimento</h2>
 
 - [ ] Após finalizar o cadastro, o usuário é redirecionado para a tela de lista de restaurantes;
-- [ ] O usuário deve ser capaz de remover itens do carrinho.  
+- [ ] O usuário deve ser capaz de remover itens do carrinho;
+- [ ] Incluir loading em alguns locais;
+- [ ] Estilização em algumas páginas.
 
 <h2 id ="imagens"> 📱 Imagens do site </h2>
+<a href="https://drive.google.com/file/d/1Zdb2KuOSYQHtqxiMsUPDjtcDyeliJKP2/view?usp=sharing">Clique aqui para vizualizar as imagens</a>
 
-  
+<h3 align="center">👀 Prévia</h3>
+
+  <p align="center">
+  <img width="300" src="https://user-images.githubusercontent.com/94838711/159330500-9925bba6-fd43-4ee1-9b82-660999323d4d.gif"/>
+  </p>
+
 <h2 id="desenvolvedores">👷🏻‍♂ Desenvolvedores</h2>
 
 <table> 
