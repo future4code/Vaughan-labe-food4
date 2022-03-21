@@ -20,8 +20,8 @@
  <h2 id="orientar">🚨 Orientações para acesso</h2>
  
 * Login
-E-mail: future4@gmail.com
-Senha: 123456
+  <p>E-mail: future4@gmail.com</p>
+  <p>Senha: 123456</p>
 
 * Cadastro
 
@@ -88,8 +88,7 @@ Ferramentas usadas na construção do projeto:
 
 - [ ] Após finalizar o cadastro, o usuário é redirecionado para a tela de lista de restaurantes;
 - [ ] O usuário deve ser capaz de remover itens do carrinho;
-- [ ] Incluir loading em alguns locais;
-- [ ] Estilização em algumas páginas.
+- [ ] Incluir loading em alguns locais.
 
 <h2 id ="imagens"> 📱 Imagens do site </h2>
 <a href="https://drive.google.com/file/d/1Zdb2KuOSYQHtqxiMsUPDjtcDyeliJKP2/view?usp=sharing">Clique aqui para vizualizar as imagens</a>
