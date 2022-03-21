@@ -96,7 +96,7 @@ Ferramentas usadas na construção do projeto:
 <h3 align="center">👀 Prévia</h3>
 
   <p align="center">
-  <img width="300" src="https://user-images.githubusercontent.com/94838711/159330500-9925bba6-fd43-4ee1-9b82-660999323d4d.gif"/>
+  <img width="300" src="https://user-images.githubusercontent.com/94838711/159332264-73dd325a-ca20-4bbb-ace2-cca1e2bd0f66.gif"/>
   </p>
 
 <h2 id="desenvolvedores">👷🏻‍♂ Desenvolvedores</h2>
