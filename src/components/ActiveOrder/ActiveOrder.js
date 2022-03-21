@@ -1,8 +1,8 @@
-import * as React from 'react';
-import { BASE_URL } from '../../constants/url';
-import useRequestData from '../../hooks/useRequestData';
-import AccessTimeIcon from '@mui/icons-material/AccessTime';
-import { ContainerOrder, TitleOrder, PriceOrder } from './styled';
+import React from 'react'
+import { BASE_URL } from '../../constants/url'
+import useRequestData from '../../hooks/useRequestData'
+import AccessTimeIcon from '@mui/icons-material/AccessTime'
+import { ContainerOrder, TitleOrder, PriceOrder } from './styled'
 
 const ActiveOrder = () => {
     const [order] = useRequestData([], `${BASE_URL}/active-order`)

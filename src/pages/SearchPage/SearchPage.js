@@ -1,17 +1,12 @@
 import React, { useContext, useEffect, useState } from "react"
-import { ContainerCard, PageTittleContainer, TittleNavContainer, BackImg, InfoRestaurant, HeaderContainer } from "./styled"
-import Box from '@mui/material/Box'
+import { ContainerCard, PageTittleContainer, TittleNavContainer, BackImg, InfoRestaurant } from "./styled"
+import {Box, OutlinedInput, InputAdornment, FormControl, 
+Card, CardActionArea, CardContent, CardMedia, Typography} from '@mui/material'
 import Back from '../../assets/back.png'
-import OutlinedInput from '@mui/material/OutlinedInput'
-import InputAdornment from '@mui/material/InputAdornment'
-import FormControl from '@mui/material/FormControl'
 import SearchIcon from '@mui/icons-material/Search'
-import Divider from '@mui/material/Divider';
-import { Button, Card, CardActionArea, CardContent, CardMedia, Typography } from "@mui/material";
-import { useNavigate } from "react-router-dom";
-import { goToFeed, goToRestaurant } from "../../routes/coordinator";
-import GlobalStateContext from "../../global/GlobalStateContext";
-import back from "../../assets/back.png"
+import { useNavigate } from "react-router-dom"
+import { goToFeed, goToRestaurant } from "../../routes/coordinator"
+import GlobalStateContext from "../../global/GlobalStateContext"
 
 const SearchPage = () => {
   const { restaurants, setCartRest } = useContext(GlobalStateContext)
@@ -79,7 +74,7 @@ const SearchPage = () => {
         </TittleNavContainer>
       </PageTittleContainer>
 
-      <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: 6.5, textAlign: 'center' }}>
+      <Box sx={{ marginTop: 7, textAlign: 'center' }}>
         <div>
           <FormControl sx={{ m: 1, width: '40ch' }} variant="outlined" >
             <OutlinedInput

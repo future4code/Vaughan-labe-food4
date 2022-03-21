@@ -1,6 +1,7 @@
 import { TextField } from "@mui/material"
 import React from "react"
-import { ContainerInput, ContainerUpDateProfile, PageTittleContainer, TittleNavContainer, BackImg, Button} from "./styled";
+import { ContainerInput, ContainerUpDateProfile, PageTittleContainer, 
+TittleNavContainer, BackImg, Button} from "./styled"
 import Back from '../../../assets/back.png'
 import { goToProfile } from "../../../routes/coordinator"
 import { useNavigate } from "react-router-dom"

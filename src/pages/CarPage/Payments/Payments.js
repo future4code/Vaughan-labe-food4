@@ -1,10 +1,10 @@
-import { FormControlLabel } from "@mui/material";
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { confirmPurchase } from "../../../services/Requests";
-import { ContainerForm, ButtonStyle, FormPayment, PaymentTitle} from "./styled";
-import PanoramaFishEyeIcon from '@mui/icons-material/PanoramaFishEye';
-import RadioButtonCheckedIcon from '@mui/icons-material/RadioButtonChecked';
+import { FormControlLabel} from "@mui/material"
+import React, { useState } from "react"
+import { useNavigate } from "react-router-dom"
+import { confirmPurchase } from "../../../services/Requests"
+import { ContainerForm, ButtonStyle, FormPayment, PaymentTitle, ButtonS} from "./styled"
+import PanoramaFishEyeIcon from '@mui/icons-material/PanoramaFishEye'
+import RadioButtonCheckedIcon from '@mui/icons-material/RadioButtonChecked'
 
 const Payments = ({ cart, resId, }) => {
     const navigate = useNavigate()
@@ -61,7 +61,7 @@ const Payments = ({ cart, resId, }) => {
 
             <div className="button">
                 {cart.length === 0 ?
-                    <ButtonStyle variant="contained" disabled>Confirmar</ButtonStyle>
+                    <ButtonS marginLeft='90' variant="contained" disabled >Confirmar</ButtonS>
                     :
                     <ButtonStyle variant="contained" color="primary" onClick={()=> confirmBuy()}>Confirmar</ButtonStyle>
                 }

@@ -1,13 +1,11 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import BottomNavigation from '@mui/material/BottomNavigation';
-import BottomNavigationAction from '@mui/material/BottomNavigationAction';
+import React from 'react'
+import {Box, BottomNavigation, BottomNavigationAction} from '@mui/material'
 import avatar from "../../assets/avatar.png"
 import homepage from "../../assets/homepage.png"
 import Cart from "../../assets/cartGreen.png"
-import { ContainerNavBar } from './styled';
-import { useNavigate } from 'react-router-dom';
-import { goToFeed, goToProfile } from '../../routes/coordinator';
+import { ContainerNavBar } from './styled'
+import { useNavigate } from 'react-router-dom'
+import { goToFeed, goToProfile } from '../../routes/coordinator'
 
 
  const NavBarCart = () => {

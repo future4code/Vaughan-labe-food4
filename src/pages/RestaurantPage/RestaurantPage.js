@@ -9,7 +9,6 @@ import { Container, BackImg, ContainerFoods, PageTittleContainer, TittleNavConta
 
 const RestaurantePage = () => {
   const navigate = useNavigate();
-  
 
   return (
     <Container>

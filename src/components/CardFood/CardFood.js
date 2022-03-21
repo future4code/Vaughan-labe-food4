@@ -3,30 +3,15 @@ import { useParams } from "react-router-dom"
 import useRequestData from "../../hooks/useRequestData"
 import { BASE_URL } from "../../constants/url"
 import GlobalStateContext from '../../global/GlobalStateContext'
-import {
-    StyleSelect, ButtonPopup, TitlePopup, ContainerPopup, DivButtonPopup,  LoadingStyle, TitleCategory,
-CardProductContainer, InfosContainer,  TitleInfo, DescInfo, DescPrice, ButtonCart} from './styled'
+import { StyleSelect, ButtonPopup, TitlePopup, ContainerPopup, DivButtonPopup, TitleCategory,
+CardProductContainer, InfosContainer, TitleInfo, DescInfo, DescPrice, ButtonCart} from './styled'
 
 const CardFood = () => {
     const [amount, setAmount] = useState(0)
     const [food, setFood] = useState([])
-    const { cart, setCart, loading, buttonCard, setButtonCard } = useContext(GlobalStateContext)
+    const { cart, setCart } = useContext(GlobalStateContext)
     const params = useParams()
     const [foods] = useRequestData([], `${BASE_URL}/restaurants/${params.id}`)
-
-
-    // const addRemove = () => {
-    //     const newProductCart = [...cart]
-    //     const findIndex = newProductCart.findIndex((product)=>{
-    //         return product.id === food.id
-    //     })
-    //     if(findIndex === -1){
-    //         setButtonCard("adicionar")
-    //     }else{
-    //         setButtonCard("remover")
-    //     }
-    //     console.log(findIndex)
-    // }
 
     const openQuantity = (food) => {
         document.querySelector(`.popup-wrapper`).style.display = `block`
@@ -83,7 +68,7 @@ const CardFood = () => {
                                 <>
                                     <ButtonCart color={"green"} onClick={() => openQuantity(food)}>adicionar</ButtonCart>
                                 </>
-                                
+
                                 <div className="popup-wrapper">
                                     <div id="popup" className="popup">
                                         <ContainerPopup>

@@ -59,7 +59,6 @@ export const ContainerMap = styled.div`
         margin: 5px 0px 25px 13px;
     }
     p{
-        /* padding-right: 25px; */
         margin: 12px;
         font-size: 16px;
     }
@@ -165,5 +164,6 @@ export const Title = styled.h1`
   margin-bottom: 10px;
   margin-left: 16px;
   margin-right: 16px;
+  margin-top: 20px;
 `
     
