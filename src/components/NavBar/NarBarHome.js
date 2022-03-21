@@ -1,18 +1,16 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import BottomNavigation from '@mui/material/BottomNavigation';
-import BottomNavigationAction from '@mui/material/BottomNavigationAction';
+import React from 'react'
+import {Box, BottomNavigation, BottomNavigationAction} from '@mui/material'
 import avatar from "../../assets/avatar.png"
 import homepage from "../../assets/homepageGreen.png"
 import Cart from "../../assets/shopping-cart.png"
-import { ContainerNavBar } from './styled';
-import { goToCar, goToProfile } from '../../routes/coordinator';
-import { useNavigate } from 'react-router-dom';
+import { ContainerNavBar } from './styled'
+import { goToCar, goToProfile } from '../../routes/coordinator'
+import { useNavigate } from 'react-router-dom'
 
 
  const NavBarHome = () => {
   const navigate = useNavigate()  
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = React.useState(0)
 
   return (
     <ContainerNavBar>

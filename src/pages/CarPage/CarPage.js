@@ -1,12 +1,11 @@
-import React, { useContext } from "react";
-import Payments from "./Payments/Payments";
-import GlobalStateContext from "../../global/GlobalStateContext";
-import { ContainerCart, PageTittleContainer, TittleNavContainer, PriceStyle } from "./styled";
-import NavBarCart from "../../components/NavBar/NavBarCart";
-import useRequestData from "../../hooks/useRequestData";
-import { BASE_URL } from "../../constants/url";
-import Card from "../../components/Card/Card";
-import { useEffect } from "react";
+import React, { useContext } from "react"
+import Payments from "./Payments/Payments"
+import GlobalStateContext from "../../global/GlobalStateContext"
+import { ContainerCart, PageTittleContainer, TittleNavContainer, PriceStyle } from "./styled"
+import NavBarCart from "../../components/NavBar/NavBarCart"
+import useRequestData from "../../hooks/useRequestData"
+import { BASE_URL } from "../../constants/url"
+import Card from "../../components/Card/Card"
 
 const CarPage = () => {
   const { cart, setCart, removeTheFood, cartRest } = useContext(GlobalStateContext)

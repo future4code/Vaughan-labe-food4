@@ -1,15 +1,12 @@
-import React, { useEffect } from "react";
-import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
-import NavBarProfile from "../../components/NavBar/NavBarPorfile";
+import React, { useEffect } from "react"
+import EditOutlinedIcon from '@mui/icons-material/EditOutlined'
+import NavBarProfile from "../../components/NavBar/NavBarPorfile"
 import useRequestData from "../../hooks/useRequestData"
 import { BASE_URL } from "../../constants/url"
-import {
-  ContainerProfile, ContainerInfoProfile, Title, ContainerImgProfile, AdressIcon,IconPosition,
-  ContainerMap, ContainerAddress, PageTittleContainer, TittleNavContainer, ContainerHistory, ContainerMapHistory
-} from "./styled";
-import edit from "../../assets/edit@2x.png"
-import { useNavigate } from "react-router-dom";
-import { goToEditAddress, goToEditLogin } from "../../routes/coordinator";
+import { ContainerProfile, ContainerInfoProfile, Title, ContainerImgProfile, AdressIcon,IconPosition,
+ContainerMap, ContainerAddress, PageTittleContainer, TittleNavContainer, ContainerHistory, ContainerMapHistory } from "./styled"
+import { useNavigate } from "react-router-dom"
+import { goToEditAddress, goToEditLogin } from "../../routes/coordinator"
 import UseProtectPage from "../../hooks/useProtectPage"
 
 const ProfilePage = () => {
@@ -58,8 +55,8 @@ const ProfilePage = () => {
           </AdressIcon>
 
           <h2>{getProfile && getProfile[0]?.user?.address} </h2>
-          <ContainerMapHistory>
 
+          <ContainerMapHistory>
           <Title >Histórico de pedidos</Title>
 
             {historyOrden[0].orders?.length === 0 ? <h2>Você não realizou nenhum pedido</h2> :

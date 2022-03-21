@@ -151,7 +151,6 @@ export const CardProductContainer = styled.div`
         width: 96px;
         height: 112px;
         border-radius: 8px 0px 0px 8px;
-        object-fit: cover;
     }
   .popup-wrapper{
   background: rgba(0,0,0,.5);
@@ -166,11 +165,11 @@ export const CardProductContainer = styled.div`
     font-family: 'Roboto', sans-serif;
     font-weight: 550;
     margin-top: 13.125rem;
-    margin-left: 1.125rem;
+    margin-left: 0.75rem;
     text-align: center;
     width: 100%;
-    max-width: 300px;
-    padding: 20px;
+    max-width: 350px;
+    padding-bottom: 20px;
     background: #fff;
     position: relative;
 @media screen and (min-width: 414px){
@@ -179,17 +178,16 @@ export const CardProductContainer = styled.div`
 }
 @media screen and (max-width: 360px){
   margin-top:17rem;
-  left: -8.5px;
+  left: -8px;
 }
 @media screen and (max-width: 321px){
   width: 100%;
-  max-width: 270px;
+  max-width: 350px;
   left: -13.5px;
 }
 }
 }
 `
-
 export const InfosContainer = styled.div`
     flex: 2;
     display: flex;

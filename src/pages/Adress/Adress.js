@@ -1,12 +1,12 @@
 import React, { useState } from "react"
 import Back from '../../assets/back.png'
-import { CircularProgress, TextField } from "@mui/material";
-import UseForm from "../../hooks/useForm";
-import { useNavigate } from "react-router-dom";
-import { ContainerInput, Button, PageTittleContainer, TittleNavContainer, BackImg } from "./styled";
-import { adress } from "../../services/Requests";
-import { goToFeed } from "../../routes/coordinator";
-import { alerts } from "../../constants/alerts";
+import { CircularProgress, TextField } from "@mui/material"
+import UseForm from "../../hooks/useForm"
+import { useNavigate } from "react-router-dom"
+import { ContainerInput, Button, PageTittleContainer, TittleNavContainer, BackImg } from "./styled"
+import { adress } from "../../services/Requests"
+import { goToFeed } from "../../routes/coordinator"
+import { alerts } from "../../constants/alerts"
 
 const Adress = () => {
   const navigate = useNavigate()
@@ -23,7 +23,6 @@ const Adress = () => {
   const submit = (event) => {
     event.preventDefault()
     adress(form, clearFields, navigate, setIsLoading)
-    console.log(form)
     clearFields()
   }
 

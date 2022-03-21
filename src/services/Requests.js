@@ -1,7 +1,7 @@
 import axios from "axios"
-import { BASE_URL } from "../constants/url";
+import { BASE_URL } from "../constants/url"
 import { alerts } from '../constants/alerts'
-import { goToAdress, goToFeed, goToProfile, goToLogin } from "../routes/coordinator";
+import { goToAdress, goToFeed, goToProfile, goToLogin } from "../routes/coordinator"
 
 export const login = (body, clear, navigate, setIsLoading) => {
   setIsLoading(true)

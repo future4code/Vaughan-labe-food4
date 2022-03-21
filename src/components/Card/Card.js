@@ -1,5 +1,5 @@
-import React from "react";
-import { ContainerCard } from "./styled";
+import React from "react"
+import { ContainerCard } from "./styled"
 
 const Card = ({photo, name, description, price, remove, quantity}) => {
 

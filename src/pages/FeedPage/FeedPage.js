@@ -1,12 +1,8 @@
 import React from "react"
 import CardFeed from "./CardFeed/CardFeed"
 import { PageTittleContainer, TittleNavContainer, ContainerSearch, Container } from "./styled"
-import Box from '@mui/material/Box'
-import OutlinedInput from '@mui/material/OutlinedInput'
-import InputAdornment from '@mui/material/InputAdornment'
-import FormControl from '@mui/material/FormControl'
+import {OutlinedInput, Box, InputAdornment, FormControl, Divider} from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search'
-import Divider from '@mui/material/Divider'
 import NavBarHome from "../../components/NavBar/NarBarHome"
 import { goToSearch } from "../../routes/coordinator"
 import { useNavigate } from "react-router-dom"

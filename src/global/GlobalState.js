@@ -3,7 +3,6 @@ import { BASE_URL } from "../constants/url";
 import useRequestData from "../hooks/useRequestData";
 import GlobalStateContext from "./GlobalStateContext";
 
-
 const GlobalState = (props) => {
     const [restaurants, setRestaurants, loading] = useRequestData([], `${BASE_URL}/restaurants`)
     const [cart, setCart] = useState([])

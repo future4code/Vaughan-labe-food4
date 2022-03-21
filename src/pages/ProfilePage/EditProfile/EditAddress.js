@@ -20,7 +20,6 @@ const EditAddress = () => {
   const submit = (event) => {
     event.preventDefault()
     UpDateAdress(form, clearFields, navigate)
-    console.log(form)
     clearFields()
   }
   return (
