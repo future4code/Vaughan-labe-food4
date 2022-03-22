@@ -91,7 +91,7 @@ Ferramentas usadas na construção do projeto:
 - [ ] Incluir loading em alguns locais.
 
 <h2 id ="imagens"> 📱 Imagens do site </h2>
-<a href="https://drive.google.com/file/d/1Zdb2KuOSYQHtqxiMsUPDjtcDyeliJKP2/view?usp=sharing">Clique aqui para vizualizar as imagens</a>
+<a href="https://drive.google.com/file/d/1ZaNKz8Bdem09uGE0vWjd0h-NxfzIjAPq/view?usp=sharing">Clique aqui para vizualizar as imagens</a>
 
 <h3 align="center">👀 Prévia</h3>
 
