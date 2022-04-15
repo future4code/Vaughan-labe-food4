@@ -9,11 +9,10 @@ import Card from "../../components/Card/Card";
 import { useEffect } from "react";
 
 const CarPage = () => {
-  const {cart, setCart, removeTheFood, cartRest} = useContext(GlobalStateContext)  
+  const {cart, setCart, cartRest} = useContext(GlobalStateContext)  
   const profile = useRequestData([], `${BASE_URL}/profile`)
   const [restaurant] = useRequestData([], `${BASE_URL}/restaurants/${cartRest}`)
 
- 
 
  const valueAll = () =>{
     let valueAllCart = 0
@@ -53,9 +52,9 @@ return (
               name={food.name}
               description={food.description}
               price={food.price}
-              quantity={food.quantity}
-              remove={()=>removeTheFood(food)}
-              />
+              foodAll={food}
+              quantityA={food.quantity}
+            />
           )
         })}
       </div>

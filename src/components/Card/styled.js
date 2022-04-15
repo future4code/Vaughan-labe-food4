@@ -71,5 +71,86 @@ margin-bottom: 10px;
     background: transparent;
     color: #e02020;
   }
+  .add{
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    width: 100px;
+    height: 113px;
+
+    .add-btn{
+    width: 90px;
+    height: 31px;
+
+    border-radius: 10px 0px 10px 0px;
+    border: 1px solid #5CB646;
+
+    background: transparent;
+    color: #5CB646;
+    }
+  }
 }
+.popup-wrapper{
+  background: rgba(0,0,0,.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  .popup{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 550;
+    margin-top: 13.125rem;
+    margin-left: 1.125rem;
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+    padding: 20px;
+    background: #fff;
+    position: relative;
+  }
+}
+`
+export const ContainerPopup = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+`
+export const ButtonPopup = styled.a`
+  color: #5cb646;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 550;
+  font-size: 16px;
+  text-transform: uppercase;
+`
+export const StyleSelect = styled.select`
+  border: 1px solid #c5c5c5;
+  background-color: white;
+  border-radius: 5px;
+  width: 296px;
+  height: 56px;
+`
+export const DivButtonPopup = styled.div`
+  display: flex;
+  margin-left: 100px;
+  .ButtonPopup{
+  color: #5cb646;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 550;
+  font-size: 16px;
+  text-transform: uppercase;
+  }
+`
+
+
+export const TitlePopup = styled.p`
+  margin-top: 30px;
+  font-size: 16px;
+  font-weight: 470;
 `

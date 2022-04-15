@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import UseForm from "../../hooks/useForm"
-import { goToSingUp } from "../../routes/coordinator"
+import { goToFeed, goToSingUp } from "../../routes/coordinator"
 import { login } from "../../services/Requests"
 import { useNavigate } from "react-router-dom"
 import { Visibility, VisibilityOff } from "@mui/icons-material"
