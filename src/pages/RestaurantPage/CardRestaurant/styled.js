@@ -46,6 +46,7 @@ export const ContainerCard = styled.div`
     display: flex;
     justify-content: center;
     margin-top: 15px;
+    margin-bottom: 20px;
 @media screen and (max-width: 376px){ 
    margin: 20px;
 }

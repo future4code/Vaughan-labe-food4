@@ -8,8 +8,7 @@ import { BASE_URL } from "../../constants/url"
 import Card from "../../components/Card/Card"
 
 const CarPage = () => {
-  const { cart, setCart, removeTheFood, cartRest } = useContext(GlobalStateContext)
-  const profile = useRequestData([], `${BASE_URL}/profile`)
+  const {cart, cartRest} = useContext(GlobalStateContext)  
   const [restaurant] = useRequestData([], `${BASE_URL}/restaurants/${cartRest}`)
 
 
@@ -33,10 +32,6 @@ const CarPage = () => {
 
       <ContainerCart>
 
-        <div className="address">
-          <p className="p1">Endereço de entrega</p>
-          <p className="p2">{profile[0]?.user?.address}</p>
-        </div>
 
         <div className="addressRes">
           {cart.length === 0 ? "" :
@@ -48,24 +43,25 @@ const CarPage = () => {
           }
         </div>
 
+
         <div>
-          {cart.length === 0 ? <p>Carrinho vazio</p> : cart.map((food) => {
-            return (
-              <Card
-                key={food.id}
-                photo={food.photoUrl}
-                name={food.name}
-                description={food.description}
-                price={food.price}
-                quantity={food.quantity}
-                remove={() => removeTheFood(food)}
-              />
-            )
-          })}
-        </div>
+        {cart.length === 0? <p>carrinho vazio</p>: cart.map((food)=>{
+          return(
+            <Card 
+              key={food.id}
+              photo={food.photoUrl}
+              name={food.name}
+              description={food.description}
+              price={food.price}
+              foodAll={food}
+              quantityA={food.quantity}
+            />
+          )
+        })}
+      </div>
+
 
         <div className="payments">
-
           <div className="frete">
             <p>Frete R$</p>
             {cart.length === 0 ? <p>0,00</p> : <p>{restaurant?.restaurant?.shipping}</p>}
@@ -88,4 +84,4 @@ const CarPage = () => {
   )
 }
 
-export default CarPage
+export default CarPage;

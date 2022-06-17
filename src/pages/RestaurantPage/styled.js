@@ -9,7 +9,8 @@ export const Container = styled.div`
 `
 export const ContainerFoods = styled.div`
     display: flex;
-    gap:20px;
+    flex-direction: column;
+    gap:10px;
 `
 export const PageTittleContainer = styled.div`
     position: fixed;
@@ -39,4 +40,10 @@ export const BackImg = styled.img`
     left: 16px;
     width: 15px;
     height: 15px;
+`
+export const TitleCategory = styled.p`
+  width: 100%;
+  font-size: 18px ;
+  border-bottom: 1px solid black;
+  margin-bottom: 10px;
 `

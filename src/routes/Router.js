@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import SplashScreen from "../pages/SplashScreen/SplashScreen";
 import Adress from "../pages/Adress/Adress";
 import CarPage from "../pages/CarPage/CarPage";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
@@ -20,7 +21,8 @@ export const Router = () => {
     <BrowserRouter>
 
       <Routes>
-        <Route path="/" element={<LoginPage/>} />
+        <Route path="/" element={<SplashScreen/>} />
+        <Route path="/login" element={<LoginPage/>} />
         <Route path="/cadastro" element={<SignUpPage/>}/>
         <Route path="/endereco" element={<Adress/>}/>
         <Route path="/feed" element={<FeedPage/>}/>

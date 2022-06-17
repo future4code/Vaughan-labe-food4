@@ -1,13 +1,12 @@
 import React, { useState } from "react"
 import UseForm from "../../hooks/useForm"
-import { goToSingUp } from "../../routes/coordinator"
+import { goToFeed, goToSingUp } from "../../routes/coordinator"
 import { login } from "../../services/Requests"
 import { useNavigate } from "react-router-dom"
 import { Visibility, VisibilityOff } from "@mui/icons-material"
 import { TextField, InputAdornment, CircularProgress } from "@mui/material"
 import { ContainerInput, ContairnerImg, ButtonSignUpStyle, ContainerField, ButtonStyle } from "./styled"
 import logo from "../../assets/logo-future-eats-invert@2x.png"
-import Splash from "../../assets/logo-future-eats.png"
 
 
 const LoginPage = () => {
@@ -24,23 +23,11 @@ const LoginPage = () => {
     setShowPassword(!showPassword)
   }
 
-  document.addEventListener('DOMContentLoaded', (e)=>{
-    setTimeout(()=>{
-      document.querySelector(`.splash`).style.display = `none`
-    },2500);
-  })
 
 
   return (
     <ContainerInput>
-      <div className="splashScreen">
-
-      <div className="splash">
-        <img src={Splash} className="fade-in" alt="animação tela inicial"/>
-      </div>
-
-      </div>
-
+    
       <ContairnerImg>
         <img src={logo} alt={"Logo"} />
       </ContairnerImg>

@@ -1,5 +1,5 @@
 export const goToLogin = (Navigate) => {
-  Navigate("/")
+  Navigate("/login")
 }
 export const goToSingUp = (Navigate) => {
   Navigate("/cadastro")
