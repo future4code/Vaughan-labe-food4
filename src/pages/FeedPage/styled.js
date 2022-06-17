@@ -7,6 +7,12 @@ export const ContainerSearch = styled.div`
 @media screen and (max-width: 321px){ 
    width: 300px;
 }
+@media screen and (min-width: 414px){ 
+   margin-top: 20px;
+}
+@media screen and (min-width: 384px){ 
+   margin-top: 20px;
+}
 `
 export const Container =styled.div`
 margin-top: 40px;
@@ -16,7 +22,6 @@ margin-bottom:75px;
     flex-direction: row;
 }
 ` 
-
 export const PageTittleContainer = styled.div`
     position: fixed;
     top: 0;
@@ -31,6 +36,7 @@ export const PageTittleContainer = styled.div`
 export const TittleNavContainer = styled.div`
     font-family: 'Roboto', sans-serif;
     font-weight: 550;
+    margin-top: 20px;
     width: 360px;
     display: flex;
     text-align: center;

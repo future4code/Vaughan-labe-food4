@@ -5,9 +5,8 @@ import UseForm from "../../hooks/useForm"
 import { signUp } from "../../services/Requests"
 import { TextField, InputAdornment, CircularProgress } from "@mui/material"
 import { Visibility, VisibilityOff } from "@mui/icons-material"
-import back from "../../assets/back.png"
 import logo from "../../assets/logo-future-eats-invert@2x.png"
-import { ContainerInput, ContairnerImg, ContainerField, Button, LogoImg, BackImg } from "./styled"
+import { ContainerInput, ContairnerImg, ContainerField, Button, LogoImg, BackImg, ErrorPassword } from "./styled"
 
 const SignUpForm = () => {
   const navigate = useNavigate()
@@ -113,7 +112,7 @@ const SignUpForm = () => {
             onChange={onChange}
             helperText={form.confirmation !== ""
               && form.password !== form.confirmation
-              && <p style={{ color: 'red' }}>Deve ser a mesma que a anterior.</p>}
+              && <ErrorPassword >Deve ser a mesma que a anterior.</ErrorPassword>}
             InputProps={{
               endAdornment: (
                 <InputAdornment position="end" onClick={handleShowPassword}>

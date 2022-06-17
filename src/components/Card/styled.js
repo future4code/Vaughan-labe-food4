@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const ContainerCard = styled.div`
 display: grid;
@@ -12,7 +12,7 @@ border-radius: 10px 10px 10px 10px;
 margin-bottom: 10px;
 .photo{
   img{
-    height: 113px;
+    height: 111px;
     width: 115px;
     object-fit: cover;
     border-radius: 10px 0px 0px 10px;
@@ -20,7 +20,7 @@ margin-bottom: 10px;
 }
 .infos{
     width: 100px;
-    height: 113px;
+    height: 111px;
     margin-left: 15px;
     .name{
         color: #5CB646;
@@ -48,7 +48,7 @@ margin-bottom: 10px;
   align-items: flex-end;
 
   width: 100px;
-  height: 113px;
+  height: 111px;
     
   .quantity{
     width: 33px;

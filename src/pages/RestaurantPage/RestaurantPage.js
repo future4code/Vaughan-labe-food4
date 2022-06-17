@@ -19,7 +19,6 @@ const RestaurantePage = () => {
   const openQuantity = (food) => {
     document.querySelector(`.popup-wrapper`).style.display = `block`
     setFood(food)
-    console.log(food)
   }
 
   const listOfCategories = foods.restaurant && foods.restaurant.products.map((food) => {

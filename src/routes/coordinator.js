@@ -1,38 +1,31 @@
 export const goToLogin = (Navigate) => {
-  Navigate("/");
+  Navigate("/login")
 }
-
 export const goToSingUp = (Navigate) => {
-  Navigate("/signUp");
+  Navigate("/cadastro")
 }
-
 export const goToAdress = (Navigate) => {
-  Navigate("/adress");
+  Navigate("/endereco")
 }
-
 export const goToCar = (Navigate) => {
-  Navigate("/car");
+  Navigate("/carrinho")
 }
-
 export const goToFeed = (Navigate) => {
-  Navigate("/feed");
+  Navigate("/feed")
 }
-
 export const goToProfile = (Navigate) => {
-  Navigate("/profile");
+  Navigate("/perfil")
 }
-
 export const goToRestaurant = (Navigate, id) => {
-  Navigate(`/restaurant/${id}`);
+  Navigate(`/restaurante/${id}`)
 }
-
 export const goToSearch = (Navigate) => {
-  Navigate("/search");
+  Navigate("/pesquisa")
 }
 export const goToEditLogin = (Navigate) => {
-  Navigate("/profile/editProfile");
+  Navigate("/perfil/editarPerfil")
 }
 export const goToEditAddress = (Navigate) => {
-  Navigate("/profile/editAddress");
+  Navigate("/perfil/editarEndereco")
 }
 

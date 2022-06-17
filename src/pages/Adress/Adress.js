@@ -1,12 +1,12 @@
 import React, { useState } from "react"
 import Back from '../../assets/back.png'
-import { CircularProgress, TextField } from "@mui/material";
-import UseForm from "../../hooks/useForm";
-import { useNavigate } from "react-router-dom";
-import { ContainerInput, Button, PageTittleContainer, TittleNavContainer, BackImg } from "./styled";
-import { adress } from "../../services/Requests";
-import { goToLogin } from "../../routes/coordinator";
-import back from "../../assets/back.png"
+import { CircularProgress, TextField } from "@mui/material"
+import UseForm from "../../hooks/useForm"
+import { useNavigate } from "react-router-dom"
+import { ContainerInput, Button, PageTittleContainer, TittleNavContainer, BackImg } from "./styled"
+import { adress } from "../../services/Requests"
+import { goToFeed } from "../../routes/coordinator"
+import { alerts } from "../../constants/alerts"
 
 const Adress = () => {
   const navigate = useNavigate()
@@ -19,23 +19,28 @@ const Adress = () => {
     state: "",
     complement: ""
   })
+
   const submit = (event) => {
     event.preventDefault()
     adress(form, clearFields, navigate, setIsLoading)
-    console.log(form)
     clearFields()
   }
+
+  const alert = () => {
+    alerts("error", "O usuário precisa cadastrar um endereço!")
+  }
+
   return (
 
     <div>
       <PageTittleContainer>
         <TittleNavContainer>
-          <BackImg src={Back} onClick={() => goToLogin(navigate)} />
+          <BackImg src={Back} alt="Ícone de voltar" onClick={alert} />
         </TittleNavContainer>
       </PageTittleContainer>
 
       <ContainerInput>
-        
+
         <form onSubmit={submit}>
 
           <p>Meu endereço</p>
@@ -95,7 +100,7 @@ const Adress = () => {
             required
             onChange={onChange}
           />
-          <Button variant="contained" color={"primary"} type="submit">{ isLoading ? <CircularProgress color="inherit" size={24}/> : <>Salvar</>}</Button>
+          <Button variant="contained" color={"primary"} type="submit" >{isLoading ? <CircularProgress color="inherit" size={24} /> : <>Salvar</>}</Button>
         </form>
       </ContainerInput>
     </div>

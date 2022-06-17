@@ -27,6 +27,7 @@ export const PageTittleContainer = styled.div`
 export const TittleNavContainer = styled.div`
     font-family: 'Roboto', sans-serif;
     font-weight: 550;
+    margin-top: 20px;
     width: 360px;
     height: 44px;
     display: flex;
